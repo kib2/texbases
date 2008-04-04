@@ -25,9 +25,11 @@ import cairo
 import gobject
 
 ## TODO:
+# Un fichier de configuration a la place des variables globales
 # Dans open_file ouvrir aussi les pdf
-# Pouvoir modifier le fichier edite
+# Pouvoir modifier & sauvegarder le fichier LaTeX edite
 # Voir le niveau de zoom dans la statusbar
+# Plusieurs feuilles de template
 
 ## Variables globales : je sais, c'est pas beau
 ZOOM = 1.2 # niveau de zoom dans la vue pdf
@@ -40,7 +42,7 @@ NIVEAUX = os.listdir(MYHOME)
 TEMPLATES_DIR = os.path.join(APPLIREP,'templates')
 SORTIE_DIR = os.path.join(APPLIREP,'sortie')
 TEMPDIR = os.path.join(APPLIREP,'temp')
-PAGE_ACCEUIL = os.path.join(APPLIREP,r"solides.pdf")
+PAGE_ACCEUIL = os.path.join(APPLIREP,r"prem.pdf")
 
 # Un petit template entre chaque exo
 Ex_templ = string.Template(r"""
@@ -259,7 +261,7 @@ class Syracuse:
         self.on_changed(uri="file://" + fn)
         return
 
-    def setPDFBox(self, uri = "file://" + r"/home/kib/Bureau/Syracuse/solides.pdf" ):
+    def setPDFBox(self, uri = "file://" + PAGE_ACCEUIL):
         self.document = poppler.document_new_from_file (uri, None)
         self.n_pages = self.document.get_n_pages()
         self.current_page = self.document.get_page(0)
