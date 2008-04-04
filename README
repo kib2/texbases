@@ -1,8 +1,11 @@
-h1. TeXBases
+========
+TeXBases
+========
 
-h2. Dépendances :
+Dépendances :
+=============
 
- %{color:red}TeXBases% utilise les librairies suivantes :
+TeXBases utilise les librairies suivantes :
 
 * PyPoppler : https://launchpad.net/poppler-python,
   pour afficher les documemts au format pdf. Celle-ci n'est disponible que par 
@@ -10,5 +13,11 @@ h2. Dépendances :
 
 * pyGtkSourceView2 : http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.1/
   Il semblerait qu'elle fonctionne même sous Windows, mais c'est à confirmer.
-  
+
+Lancement de l'application:
+===========================
+
+Lancer la commande suivante :
+
+    python texbases.py
 
