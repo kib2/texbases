@@ -1,0 +1,12 @@
+========
+TeXBases
+========
+
+TeXBases utilise les librairies suivantes :
+
+- PyPoppler : https://launchpad.net/poppler-python,
+  pour afficher les documemts au format pdf. Celle-ci n'est disponible que par 
+  launchpad et ne possède pas de documentation. pour le moment.
+
+- pyGtkSourceView2 : http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.1/
+  Il semblerait qu'elle fonctionne même sous Windows, mais c'est à confirmer.
