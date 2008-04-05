@@ -24,7 +24,12 @@ Lancer la commande suivante :
 Changelog:
 ==========
 
-05.04.2008 : - Ajout du fichier de configuration pour se debarasser des
+05.04.2008 : - Renommage massif de fonctions et réorganisation du code.
+            
+             - Ajout d'un dialogue 'A propos", même s'il n'est pas encore 
+               visible.
+             
+             - Ajout du fichier de configuration pour se debarasser des
                variables globales.
              
              - Ajout d'un dialogue pour pouvoir choisir sa feuille de

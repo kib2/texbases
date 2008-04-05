@@ -541,7 +541,6 @@ class Syracuse:
           return None
       return model[active][0]
 
-
 if __name__ == "__main__":
     app = Syracuse()
     gtk.main()
