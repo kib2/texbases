@@ -5,15 +5,17 @@ __author__="Kibleur Christophe (kib2@free.fr)"
 __date__="4 Avril 2008"
 __copyright__="Copyright 2008 Kibleur Christophe"
 __license__="GPL"
-__version__="0.1"
+__version__="0.2"
 __URL__="http://snippets.dzone.com/posts/show/2887"
 
 import os
 import sys
 import string # pour les templates
 import shutil # pour la copie de fichiers
-from urlparse import urlparse
 from subprocess import call
+
+## Configuration file : ConfigParser
+import ConfigParser
 
 # Imports de Gtk2
 import gtk
@@ -25,24 +27,13 @@ import cairo
 import gobject
 
 ## TODO:
-# Un fichier de configuration a la place des variables globales
-# Dans open_file ouvrir aussi les pdf
+
+# Dans on_open_file ouvrir aussi les pdf
 # Pouvoir modifier & sauvegarder le fichier LaTeX edite
 # Voir le niveau de zoom dans la statusbar
 # Plusieurs feuilles de template
 
-## Variables globales : je sais, c'est pas beau
-ZOOM = 1.2 # niveau de zoom dans la vue pdf
-MYFONTS = r"DejaVu Sans Mono 12"
-EXTENSIONS = ('.tex', '.asy','.mp','.py')
-
 APPLIREP = os.getcwd()
-MYHOME = os.path.join(APPLIREP,'base')
-NIVEAUX = os.listdir(MYHOME)
-TEMPLATES_DIR = os.path.join(APPLIREP,'templates')
-SORTIE_DIR = os.path.join(APPLIREP,'sortie')
-TEMPDIR = os.path.join(APPLIREP,'temp')
-PAGE_ACCEUIL = os.path.join(APPLIREP,r"prem.pdf")
 
 # Un petit template entre chaque exo
 Ex_templ = string.Template(r"""
@@ -61,10 +52,14 @@ class Syracuse:
 
     def __init__(self):
 
+        # Va lire le fichier de config
+        self.readConf()
+        print self._conf
         #
-        self.pdf_url = "file://" + PAGE_ACCEUIL
+        self.pdf_url = "file://" + self._conf["PAGE_ACCEUIL"]
         # On recupere le fichier glade en XML
         self.wTree = gtk.glade.XML("texbases.glade")
+        self.window = self.wTree.get_widget("window")
         
         # Gestion des signaux de Glade
         #Create our dictionay and connect it
@@ -73,7 +68,6 @@ class Syracuse:
             "on_button_minus_clicked" : self.on_button_minus_clicked,
             "on_button_compose_clicked" : self.on_button_compose_clicked,
             "on_button_out_clicked" : self.on_button_out_clicked,
-                #"on_MainWindow_destroy" : gtk.main_quit
                 }
         self.wTree.signal_autoconnect(glade_signals)
         
@@ -97,6 +91,44 @@ class Syracuse:
         self.wTree.signal_autoconnect(dic)
         self.wTree.get_widget("window").show()
         
+    def readConf(self):
+        """Lit le fichier de configuration texbases.conf
+        """
+        config = ConfigParser.RawConfigParser()
+        try:
+            config.read('texbases.conf')
+        except:
+            print "'texbases.conf' n'existe pas dans le repertoire de TeXBases."
+            return
+    
+        tbi = "TB_internals"
+        zoom        = config.getfloat(tbi, 'ZoomLevel')
+        fonts       = config.get(tbi, 'Fonts')
+        extensions  = config.get(tbi, 'Extens')
+        
+        tbf = "TB_folders"
+        base        = config.get(tbf, 'Base')
+        templates   = config.get(tbf, 'Templates')
+        sortie      = config.get(tbf, 'Out')
+        tempdir     = config.get(tbf, 'Temp')
+        acceuil     = config.get(tbf, 'HomePic')
+        
+        self._conf = {
+            "ZOOM" : zoom,
+            "MYFONTS" : fonts,
+            "EXTENSIONS" : tuple(extensions.split()),
+            
+            "MYHOME" : os.path.join(APPLIREP,base),
+            "TEMPLATES_DIR" : os.path.join(APPLIREP,templates),
+            "SORTIE_DIR" : os.path.join(APPLIREP,sortie),
+            "TEMPDIR" : os.path.join(APPLIREP,tempdir),
+            "PAGE_ACCEUIL" : os.path.join(APPLIREP,acceuil),
+            
+        }
+        self.NIVEAUX = os.listdir(self._conf["MYHOME"])
+        #print zoom, fonts, tuple(extensions.split())
+        #print base, templates, sortie, tempdir, acceuil
+
     def setupTreeView(self):
         """Construit l'arbre des donnees
         """
@@ -110,17 +142,22 @@ class Syracuse:
         # Construction de l'arbre des documents 
         
         # parcours chaque niveau 6eme,5eme,etc.
-        for niv in NIVEAUX :
+        self.NIVEAUX.sort()
+        for niv in self.NIVEAUX :
             niv_line = self.treestore.append(None, ('%s' % niv,None, niv))
             
             # parcours chaque theme Thales,Equations,etc.
-            rep_niv = os.path.join(MYHOME,niv)
-            for chap in os.listdir(rep_niv) :
+            rep_niv = os.path.join(self._conf["MYHOME"],niv)
+            nivs = os.listdir(rep_niv)
+            nivs.sort()
+            for chap in nivs:
                 chap_line = self.treestore.append(niv_line, ('%s'%chap,None, writesep((niv,chap))))
                 
                 # parcours chaque document doc1.tex, doc2.tex, etc..
                 rep_doc = os.path.join(rep_niv,chap)
-                for doc in [f for f in os.listdir(rep_doc) if os.path.splitext(f)[1] in EXTENSIONS]:
+                docs = os.listdir(rep_doc)
+                docs.sort()
+                for doc in [f for f in docs if os.path.splitext(f)[1] in self._conf["EXTENSIONS"]]:
                     doc_line = self.treestore.append(chap_line, ('%s'%doc,None, writesep((niv,chap,doc)) ))
                     
         # creation du TreeView en utilisant notre TreeStore
@@ -170,102 +207,16 @@ class Syracuse:
         self.sw.show()
         
         # connexions
-        self.treeview.connect('row-activated', self.open_file)
+        self.treeview.connect('row-activated', self.on_open_file)
         self.renderer1.connect( 'toggled', self.on_toogle_selection, self.treestore )
-        
-        
-    def on_toogle_selection( self, cell, path, model ):
-        """
-        Sets the toggled state on the toggle button to true or false.
-        """
-        model[path][1] = not model[path][1]
-        print "Toggle '%s' to: %s" % (model[path][0], model[path][1],)
-        return
 
-    def open_file(self, treeview, chemin, treeviewcolumn):
-        """Appele lorsqu'un double clic a lieu
-        sur une entree de l'arbre.
-        """
-        model = treeview.get_model()
-        iter = model.get_iter(chemin)
-
-        doc = model.get_value(iter, 0)
-        the_path = model.get_value(iter, 2)
-        print "THE PATH : %s"%the_path
-        
-        ## set the pdf viewer
-        the_path_extens = the_path[-3:] # extension sans le point
-        #print "EXTENSION=",the_path_extens
-        pdf_doc = the_path[:-3] + 'pdf'
-        #print "PDF_DOC=",pdf_doc
-        fn = os.path.join(MYHOME,pdf_doc)
-        #print "FN=%s"%fn
-        
-        ## set the buffer with the correct mimetype
-        if os.path.isdir(os.path.join(MYHOME,the_path)) :
-            pass
-        else:
-            # Rempli le gtkSourceView du texte LaTeX, mp ou autre
-            gsl = self.get_language_for_mime_type("text/x-%s"%(the_path_extens))
-            self.buffer.set_language(gsl)
-            f = open(os.path.join(MYHOME,the_path),'r')
-            self.buffer.set_text(f.read())
-            f.close()
-
-        # verifie l'existence d'un pdf
-        if not os.path.isfile(fn) :
-            self.create_pdf(os.path.join(MYHOME,the_path))
-
-        if os.path.isfile(fn) :
-            self.pdf_url = "file://" + fn
-            self.on_changed(uri="file://" + fn)
-        return
-
-    def OLD_open_file(self, treeview, chemin, treeviewcolumn):
-        """Appele lorsqu'un double clic a lieu
-        sur une entree de l'arbre.
-        """
-        model = treeview.get_model()
-        iter = model.get_iter(chemin)
-        
-        doc = model.get_value(iter, 0)
-        print "Document : %s"%doc
-        
-        doc2 = model.get_value(iter, 2)
-        print "Document2 : %s"%doc2
-
-        # returns a gtk.TreeIter pointing to the parent of child
-        chap_iter = model.iter_parent(iter)
-        chap = model.get_value(chap_iter, 0)
-        print "Chapitre : %s"%chap
-        
-        # retourne le niveau
-        niv_iter = model.iter_parent(chap_iter)
-        niv = model.get_value(niv_iter, 0)
-        print "Niveau   : %s"%niv
-        
-        ## set the pdf viewer
-        extens = doc[-3:] # extension sans le point
-        pdf_doc = doc[:-3] + 'pdf'
-        print pdf_doc
-        fn = os.path.join(MYHOME,niv,chap,pdf_doc)
-        
-        ## set the buffer with the correct mimetype
-        gsl = self.get_language_for_mime_type("text/x-%s"%(extens))
-        self.buffer.set_language(gsl)
-        f = open(os.path.join(MYHOME,niv,chap,doc),'r')
-        self.buffer.set_text(f.read())
-        f.close()
-        
-        self.pdf_url = "file://" + fn
-        self.on_changed(uri="file://" + fn)
-        return
-
-    def setPDFBox(self, uri = "file://" + PAGE_ACCEUIL):
+    def setPDFBox(self, uri = ""):
+        if uri == "":
+            uri = "file://" + self._conf["PAGE_ACCEUIL"]
         self.document = poppler.document_new_from_file (uri, None)
         self.n_pages = self.document.get_n_pages()
         self.current_page = self.document.get_page(0)
-        self.scale = ZOOM
+        self.scale = self._conf["ZOOM"]
         self.width, self.height = self.current_page.get_size()
         
         self.surface = cairo.ImageSurface(cairo.FORMAT_RGB24,
@@ -282,55 +233,18 @@ class Syracuse:
         self.dwg.show()
         
        
-    def on_changed(self, uri):
-        """Lorsque l'on change de document actualise la
-        vue du nouveau pdf
-        """
-        self.document = poppler.document_new_from_file (uri, None)
-        self.current_page = self.document.get_page(0)
-        self.dwg.set_size_request(int(self.width*self.scale),
-                                  int(self.height*self.scale))
-        self.dwg.queue_draw()
-
-    def on_expose(self, widget, event):
-        """Evenement apelle lorque la vue pdf
-        a besoin d'etre rafraichie
-        """
-        cr = widget.window.cairo_create()
-        cr.set_source_surface(self.surface)
-        cr.set_source_rgb(1, 1, 1)
-        
-        if self.scale != 1:
-            cr.scale(self.scale, self.scale)
-        
-        cr.rectangle(0, 0, self.width*self.scale, self.height*self.scale)
-        cr.fill()
-        self.current_page.render(cr)
-        
-    def get_template(self, tpl='feuilleExos.tex'):
+    def get_template(self, tpl=None):
         """Retourne un objet de type string.Template
         lu dans le repertoire templates de l'application
         """
-        f = open(os.path.join(TEMPLATES_DIR,tpl),'r')
-        templ = string.Template(f.read())
-        f.close()
-        return templ
-        
-    def on_button_plus_clicked(self, widget):
-        """Zoom+ sur le PDF
-        """
-        self.scale += 0.2
-        self.on_changed(self.pdf_url)
-        
-    def on_button_minus_clicked(self, widget):
-        """Zoom- sur le PDF
-        """
-        self.scale -= 0.2
-        self.on_changed(self.pdf_url)
-        
-    def on_button_out_clicked(self, widget):
-        gtk.main_quit()
-        
+        if tpl :
+            f = open(os.path.join(self._conf["TEMPLATES_DIR"],tpl),'r')
+            templ = string.Template(f.read())
+            f.close()
+            return templ
+        else:
+            raise Exception, "Pas de template fourni dans get_template()."
+
     def create_pdf(self, exercice):
         # recupere le template
         templ = self.get_template("faireExoPdf.tex")
@@ -362,13 +276,44 @@ class Syracuse:
         
         # enleve maintenant tout dans temp
         
-
     def on_button_compose_clicked(self,widget):
+        # On recupere le fichier glade en XML
+        self.gabTree = gtk.glade.XML("choix_gabarit.glade")
+        
+        # Gestion des signaux de Glade
+        #Create our dictionay and connect it
+        glade_signals = {
+            "on_gab_button_cancel_clicked" : self.on_gab_button_cancel_clicked,
+            "on_gab_button_ok_clicked" : self.on_gab_button_ok_clicked,
+                }
+        self.gabTree.signal_autoconnect(glade_signals)
+        
+        self.gab = self.gabTree.get_widget("gabaritdialog")
+        self.gab.set_transient_for(self.window)
+        self.combo = self.gabTree.get_widget("combo")
+        
+        # Modelise la combobox
+        liststore = gtk.ListStore(gobject.TYPE_STRING)
+        self.combo.set_model(model=liststore)
+        cell = gtk.CellRendererText()
+        self.combo.pack_start(cell, True)
+        self.combo.add_attribute(cell, 'text', 0)
+        
+        # Remplir la combobox
+        for pos,tpl in enumerate(os.listdir(self._conf["TEMPLATES_DIR"])):
+            self.combo.insert_text(pos, tpl)
+            
+        # Choisis le premier item par defaut
+        self.combo.set_active(0)
+        # Affiche le dialogue
+        self.gab.run()
+
+    def compose_Feuille(self,the_template):
         """Compose le document final à partir des selections
         faites par l'utilisateur
         """
         # recupere le template
-        templ = self.get_template()
+        templ = self.get_template(the_template)
         
         # Il faut differencier les vrais exos (.tex) des autres ressources
         panier_exos = [exo for exo in self.panier if exo.endswith('.tex')]
@@ -404,7 +349,7 @@ class Syracuse:
                 ex.close()
 
             # Sauvegarde du fichier final
-            sortie = open(os.path.join(SORTIE_DIR,r'out.tex'),'w')
+            sortie = open(os.path.join(self._conf["SORTIE_DIR"],r'out.tex'),'w')
             sortie.write( templ.substitute(exercices="".join(contenu)) )
             sortie.close()
             
@@ -433,13 +378,16 @@ class Syracuse:
         the_path = model.get_value(iter, 2)
         
         # le chemin entier du fichier
-        exo = os.path.join(MYHOME,the_path)
+        exo = os.path.join(self._conf["MYHOME"],the_path)
         
         if (exo not in self.panier) and (stat_cell):
             self.panier.append(exo)
         if (exo in self.panier) and (not stat_cell):
             self.panier.remove(exo)
 
+    ## =======================
+    ## GtkSourceView2 management
+    ## =======================
     def getViewAndSetBuffer(self):
         """Prepare le gtkSourceview2
         """
@@ -468,6 +416,9 @@ class Syracuse:
         return None
     
     def setupView(self):
+        """Proprietes du GtkSourceView2 :
+        fontes, num.de lignes, etc.
+        """
         v = self.view
         v.set_show_line_numbers(True)
         v.set_tab_width(4)
@@ -476,9 +427,120 @@ class Syracuse:
         v.set_wrap_mode(gtk.WRAP_WORD)
         v.set_right_margin(78)
               
-        font_desc = pango.FontDescription(MYFONTS)
+        font_desc = pango.FontDescription(self._conf["MYFONTS"])
         if font_desc:
             v.modify_font(font_desc)
+    
+    ## CALLBACKS
+    def on_changed(self, uri):
+        """Lorsque l'on change de document actualise la
+        vue du nouveau pdf
+        """
+        self.document = poppler.document_new_from_file (uri, None)
+        self.current_page = self.document.get_page(0)
+        self.dwg.set_size_request(int(self.width*self.scale),
+                                  int(self.height*self.scale))
+        self.dwg.queue_draw()
+
+    def on_expose(self, widget, event):
+        """Evenement apelle lorque la vue pdf
+        a besoin d'etre rafraichie
+        """
+        cr = widget.window.cairo_create()
+        cr.set_source_surface(self.surface)
+        cr.set_source_rgb(1, 1, 1)
+        
+        if self.scale != 1:
+            cr.scale(self.scale, self.scale)
+        
+        cr.rectangle(0, 0, self.width*self.scale, self.height*self.scale)
+        cr.fill()
+        self.current_page.render(cr)
+
+    def on_toogle_selection( self, cell, path, model ):
+        """
+        Sets the toggled state on the toggle button to true or false.
+        """
+        model[path][1] = not model[path][1]
+        print "Toggle '%s' to: %s" % (model[path][0], model[path][1],)
+        return
+
+    def on_open_file(self, treeview, chemin, treeviewcolumn):
+        """Appele lorsqu'un double clic a lieu
+        sur une entree de l'arbre.
+        """
+        model = treeview.get_model()
+        iter = model.get_iter(chemin)
+
+        doc = model.get_value(iter, 0)
+        the_path = model.get_value(iter, 2)
+        print "THE PATH : %s"%the_path
+        
+        ## set the pdf viewer
+        the_path_extens = the_path[-3:] # extension sans le point
+        #print "EXTENSION=",the_path_extens
+        pdf_doc = the_path[:-3] + 'pdf'
+        #print "PDF_DOC=",pdf_doc
+        fn = os.path.join(self._conf["MYHOME"],pdf_doc)
+        #print "FN=%s"%fn
+        
+        ## set the buffer with the correct mimetype
+        if os.path.isdir(os.path.join(self._conf["MYHOME"],the_path)) :
+            pass
+        else:
+            # Rempli le gtkSourceView du texte LaTeX, mp ou autre
+            gsl = self.get_language_for_mime_type("text/x-%s"%(the_path_extens))
+            self.buffer.set_language(gsl)
+            f = open(os.path.join(self._conf["MYHOME"],the_path),'r')
+            self.buffer.set_text(f.read())
+            f.close()
+
+        # verifie l'existence d'un pdf
+        if not os.path.isfile(fn) :
+            self.create_pdf(os.path.join(self._conf["MYHOME"],the_path))
+
+        if os.path.isfile(fn) :
+            self.pdf_url = "file://" + fn
+            self.on_changed(uri="file://" + fn)
+        return
+
+    def on_button_plus_clicked(self, widget):
+        """Zoom+ sur le PDF
+        """
+        self.scale += 0.2
+        self.on_changed(self.pdf_url)
+        
+    def on_button_minus_clicked(self, widget):
+        """Zoom- sur le PDF
+        """
+        self.scale -= 0.2
+        self.on_changed(self.pdf_url)
+        
+    def on_button_out_clicked(self, widget):
+        gtk.main_quit()
+
+    ## Gestion du dialogue de creation de feuille d'exos
+    def on_gab_button_cancel_clicked(self,widget):
+        self.gab.destroy()
+        
+    def on_gab_button_ok_clicked(self,widget):
+        """Unfortunately, the GTK+ developers did
+        not provide a convenience method to retrieve the active text.
+        
+        You'll have to create your own similar to get_active_text
+        bellow.
+        """
+        gabarit = self.get_active_text(self.combo)
+        self.compose_Feuille(gabarit)
+        self.gab.destroy()
+        
+    def get_active_text(self,combobox):
+      model = combobox.get_model()
+      active = combobox.get_active()
+      if active < 0:
+          return None
+      return model[active][0]
+
 
 if __name__ == "__main__":
     app = Syracuse()
