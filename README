@@ -21,3 +21,11 @@ Lancer la commande suivante :
 
     python texbases.py
 
+Changelog:
+==========
+
+05.04.2008 : - Ajout du fichier de configuration pour se debarasser des
+               variables globales.
+             
+             - Ajout d'un dialogue pour pouvoir choisir sa feuille de
+               composition d'exercices.
