@@ -36,6 +36,9 @@ Changelog:
                qui peut prendre les valeurs 0 ou 1. Si elle est fixée à 1,
                l'arbre des documents sera entièrement déplié, et ne le sera
                pas sinon.
+               
+             - Ajout d'un répertoire Doc pour la documentation (formats HTML
+               et PDF).
 
 05.04.2008 : - Renommage massif de fonctions et réorganisation du code.
             

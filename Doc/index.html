@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.5: http://docutils.sourceforge.net/" />
+<title>TeXBases</title>
+<style type="text/css">
+
+/* asy doc css */
+
+body {
+  font-family: "Century Gothic", Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background: black url(toto.png) repeat-x scroll center top;;  
+  /*background-color: #2f3e3e;*/
+  color: #fff;
+  margin: 2em;
+  padding: 2em;
+}
+
+#header
+{
+	float: left; 
+	width: 100%; 
+	clear: both;
+	background: #333;
+    text-align: center;
+}
+
+#header h1{ 
+    font-weight: normal; 
+    margin: 0; 
+    padding: 10px 0; 
+    color: #779955;
+    padding: 20px 20px 20px;
+}
+
+#header a {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 600%;
+	letter-spacing: -1px;
+	text-align: center;
+    color: #c4a000;
+}
+
+a[href] {
+  color: #cff07f;
+  background-color: transparent;
+}
+
+a.toc-backref {
+  text-decoration: none;
+   ont-style: italic;
+}
+
+h1 a[href] {
+  text-decoration: none;
+  color: #fcb100;
+  background-color: transparent;
+}
+
+h2 a[href] {
+  text-decoration:underline;
+  color: #cff07f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 80%;
+  background-color: transparent;
+}
+
+li {
+color: #ffffff;
+}
+
+a.strong {
+  font-weight: bold;
+}
+
+img {
+  margin: 0;
+  border: 0;
+}
+
+p {
+  margin: 0.5em 0 1em 0;
+  line-height: 1.5em;
+  color: #fff;
+}
+
+p a {
+  text-decoration: none;
+  font-style: italic;
+}
+
+p a:visited {
+  color: #fce94f;
+  background-color: transparent;
+}
+p a:active {
+  color: red;
+  background-color: transparent;
+}
+a:hover {
+  color: orange;
+  text-decoration: none;
+}
+p img {
+  border: 0;
+  margin: 0;
+}
+
+p em {
+color : #FF404F;
+}
+
+.title{ 
+    color: #fff;
+    font-size: 600%;
+	font-style: italic;
+} 
+
+h1, h2, h3, h4, h5, h6 {
+  color: #003a6b;
+  background-color: transparent;
+  font: 100% "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+  margin: 0;
+  padding-top: 0.5em;
+}
+
+h1 {
+  text-align: center;
+  color: #f57900;
+  font: 200% "Times New Roman";
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #fcb100; 
+  }
+
+h2 {
+  color: #8b7355;
+  font-size: 200%;
+  font-style: italic;
+  margin-bottom: 0.5em;
+/*   border-bottom: 1px solid #aaa; */
+}
+h3 {
+  color: #5f9ea0 ;
+  font-size: 130%;
+  margin-bottom: 0.5em;
+}
+h4 {
+  font-size: 110%;
+  font-weight: bold;
+}
+h5 {
+  font-size: 100%;
+  font-weight: bold;
+}
+h6 {
+  font-size: 80%;
+  font-weight: bold;
+}
+
+ul a, ol a {
+  text-decoration: none;
+}
+
+dt {
+  font-weight: bold;
+}
+dt a {
+  text-decoration: none;
+}
+
+dd {
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+
+legend {
+  background: #ffffff;
+  padding: 0.5em;
+}
+
+form {
+  margin: 0;
+}
+
+dl.form {
+  margin: 0;
+  padding: 1em;
+}
+
+dl.form dt {
+  width: 30%;
+  float: left;
+  margin: 0;
+  padding: 0 0.5em 0.5em 0;
+  text-align: right;
+}
+
+input {
+  font: 100% "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+  color: black;
+  background-color: white;
+  vertical-align: middle;
+}
+
+abbr, acronym, .explain {
+  color: black;
+  background-color: transparent;
+}
+
+q, blockquote {
+}
+
+code, pre {
+  font: 100% Consolas,sans-serif;
+  display: block;
+  padding: 10px;
+  color: #fff;
+  overflow: auto;
+  margin: 0.5em 1em;
+}
+
+tt.docutils {
+color: #ffb90f;
+font-family: Consolas,sans-serif;
+}
+
+/* La presentation des codes-sources*/
+div.highlight{
+background-color:#0F0000;
+background-image: url(http://kib2.free.fr/Asymptote/img/pre/pre_asy.png);
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-x-position: 5px;
+background-y-position: 5px;
+position:center;
+width:50%;
+font-family: Consolas,sans-serif;
+font-size: 100%;
+margin-left:25%;
+margin-right:25%;
+overflow: auto;
+}
+
+/* blocs literaux */
+pre.literal-block{
+background-image: url(http://kib2.free.fr/Asymptote/img/pre/pre_cam.png);
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-color:#2B303F;
+background-x-position: 5px;
+background-y-position: 5px;
+font-family:Consolas;
+font-size:100%;
+position:center;
+width:50%;
+color:#fff;
+border:2px solid #2B609F; 
+margin-left:25%;
+margin-right:25%;
+overflow: auto;
+padding: 20px ; /*marges interieures horizontales et verticales */
+}
+
+/* Admonitions */
+div.attention{
+background-image: url(http://kib2.free.fr/Asymptote/img/exclamation.png);
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-color:#FFF0BF;
+background-x-position: 5px;
+background-y-position: 5px;
+color:#000;
+position:center;
+width:50%;
+font-family: Consolas,sans-serif;
+font-size: 100%;
+margin-left:25%;
+margin-right:25%;
+overflow: auto;
+}
+
+div.attention p{
+margin-left:25px;
+color:#000;
+}
+
+img.align-center{
+background: #FFF;}
+
+/* Pygments */
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+body  { background: #202020; color: #d0d0d0 }
+body .c { color: #CFF07F; font-style: italic } /* Comment */
+body .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+body .g { color: #d0d0d0 } /* Generic */
+body .k { color: #FF901F } /* Keyword */
+body .l { color: #d0d0d0 } /* Literal */
+body .n { color: #d0d0d0 } /* Name */
+body .o { color: #E7FF00 } /* Operator */
+body .x { color: #d0d0d0 } /* Other */
+body .p { color: #707070 } /* Punctuation */
+body .cm { color: #CFF07F; font-style: italic } /* Comment.Multiline */
+body .cp { color: #cd2828 } /* Comment.Preproc */
+body .c1 { color: #CFF07F; font-style: italic } /* Comment.Single */
+body .cs { color: #e50808; background-color: #520000 } /* Comment.Special */
+body .gd { color: #d22323 } /* Generic.Deleted */
+body .ge { color: #d0d0d0; font-style: italic } /* Generic.Emph */
+body .gr { color: #d22323 } /* Generic.Error */
+body .gh { color: #ffffff } /* Generic.Heading */
+body .gi { color: #589819 } /* Generic.Inserted */
+body .go { color: #cccccc } /* Generic.Output */
+body .gp { color: #aaaaaa } /* Generic.Prompt */
+body .gs { color: #d0d0d0; font-weight: bold } /* Generic.Strong */
+body .gu { color: #ffffff; text-decoration: underline } /* Generic.Subheading */
+body .gt { color: #d22323 } /* Generic.Traceback */
+body .kc { color: #C3FFFF } /* Keyword.Constant */
+body .kd { color: #FF901F } /* Keyword.Declaration */
+body .kp { color: #FF901F } /* Keyword.Pseudo */
+body .kr { color: #FFF00F } /* Keyword.Reserved */
+body .kt { color: #4BB0DF } /* Keyword.Type */
+body .ld { color: #d0d0d0 } /* Literal.Date */
+body .m { color: #3677a9 } /* Literal.Number */
+body .s { color: #6BD00F } /* Literal.String */
+body .na { color: #bbbbbb } /* Name.Attribute */
+body .nb { color: #24909d } /* Name.Builtin */
+body .nc { color: #447fcf; text-decoration: underline } /* Name.Class */
+body .no { color: #40ffff } /* Name.Constant */
+body .nd { color: #ffa500 } /* Name.Decorator */
+body .ni { color: #d0d0d0 } /* Name.Entity */
+body .ne { color: #bbbbbb } /* Name.Exception */
+body .nf { color: #447fcf } /* Name.Function */
+body .nl { color: #d0d0d0 } /* Name.Label */
+body .nn { color: #447fcf; text-decoration: underline } /* Name.Namespace */
+body .nx { color: #d0d0d0 } /* Name.Other */
+body .py { color: #d0d0d0 } /* Name.Property */
+body .nt { color: #6ab825; font-weight: bold } /* Name.Tag */
+body .nv { color: #40ffff } /* Name.Variable */
+body .ow { color: #6ab825 } /* Operator.Word */
+body .w { color: #666666 } /* Text.Whitespace */
+body .mf { color: #3677a9 } /* Literal.Number.Float */
+body .mh { color: #3677a9 } /* Literal.Number.Hex */
+body .mi { color: #3677a9 } /* Literal.Number.Integer */
+body .mo { color: #3677a9 } /* Literal.Number.Oct */
+body .sb { color: #6BD00F } /* Literal.String.Backtick */
+body .sc { color: #6BD00F } /* Literal.String.Char */
+body .sd { color: #6BD00F } /* Literal.String.Doc */
+body .s2 { color: #6BD00F } /* Literal.String.Double */
+body .se { color: #6BD00F } /* Literal.String.Escape */
+body .sh { color: #6BD00F } /* Literal.String.Heredoc */
+body .si { color: #6BD00F } /* Literal.String.Interpol */
+body .sx { color: #ffa500 } /* Literal.String.Other */
+body .sr { color: #6BD00F } /* Literal.String.Regex */
+body .s1 { color: #6BD00F } /* Literal.String.Single */
+body .ss { color: #6BD00F } /* Literal.String.Symbol */
+body .bp { color: #24909d } /* Name.Builtin.Pseudo */
+body .vc { color: #40ffff } /* Name.Variable.Class */
+body .vg { color: #40ffff } /* Name.Variable.Global */
+body .vi { color: #40ffff } /* Name.Variable.Instance */
+body .il { color: #3677a9 } /* Literal.Number.Integer.Long */
+
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+body  { background: #000; }
+body .c { color: #60a0b0; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #007020; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+body .cp { color: #007020 } /* Comment.Preproc */
+body .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+body .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #808080 } /* Generic.Output */
+body .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0040D0 } /* Generic.Traceback */
+body .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+body .kp { color: #007020 } /* Keyword.Pseudo */
+body .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #007020; font-weight: bold } /* Keyword.Type */
+body .m { color: #40a070 } /* Literal.Number */
+body .s { color: #4070a0 } /* Literal.String */
+body .na { color: #4070a0 } /* Name.Attribute */
+body .nb { color: #007020 } /* Name.Builtin */
+body .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+body .no { color: #60add5 } /* Name.Constant */
+body .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+body .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+body .ne { color: #007020 } /* Name.Exception */
+body .nf { color: #06287e } /* Name.Function */
+body .nl { color: #002070; font-weight: bold } /* Name.Label */
+body .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+body .nt { color: #062873; font-weight: bold } /* Name.Tag */
+body .nv { color: #bb60d5 } /* Name.Variable */
+body .ow { color: #007020; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #40a070 } /* Literal.Number.Float */
+body .mh { color: #40a070 } /* Literal.Number.Hex */
+body .mi { color: #40a070 } /* Literal.Number.Integer */
+body .mo { color: #40a070 } /* Literal.Number.Oct */
+body .sb { color: #4070a0 } /* Literal.String.Backtick */
+body .sc { color: #4070a0 } /* Literal.String.Char */
+body .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #4070a0 } /* Literal.String.Double */
+body .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #4070a0 } /* Literal.String.Heredoc */
+body .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+body .sx { color: #c65d09 } /* Literal.String.Other */
+body .sr { color: #235388 } /* Literal.String.Regex */
+body .s1 { color: #4070a0 } /* Literal.String.Single */
+body .ss { color: #517918 } /* Literal.String.Symbol */
+body .bp { color: #007020 } /* Name.Builtin.Pseudo */
+body .vc { color: #bb60d5 } /* Name.Variable.Class */
+body .vg { color: #bb60d5 } /* Name.Variable.Global */
+body .vi { color: #bb60d5 } /* Name.Variable.Instance */
+body .il { color: #40a070 } /* Literal.Number.Integer.Long */
+
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+body  { background: #000; }
+body .c { color: #60a0b0; font-style: italic } /* Comment */
+body .err { border: 1px solid #FF0000 } /* Error */
+body .k { color: #007020; font-weight: bold } /* Keyword */
+body .o { color: #666666 } /* Operator */
+body .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+body .cp { color: #007020 } /* Comment.Preproc */
+body .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+body .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .gr { color: #FF0000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #00A000 } /* Generic.Inserted */
+body .go { color: #808080 } /* Generic.Output */
+body .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #0040D0 } /* Generic.Traceback */
+body .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+body .kp { color: #007020 } /* Keyword.Pseudo */
+body .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #007020; font-weight: bold } /* Keyword.Type */
+body .m { color: #40a070 } /* Literal.Number */
+body .s { color: #4070a0 } /* Literal.String */
+body .na { color: #4070a0 } /* Name.Attribute */
+body .nb { color: #007020 } /* Name.Builtin */
+body .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+body .no { color: #60add5 } /* Name.Constant */
+body .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+body .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+body .ne { color: #007020 } /* Name.Exception */
+body .nf { color: #06287e } /* Name.Function */
+body .nl { color: #002070; font-weight: bold } /* Name.Label */
+body .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+body .nt { color: #062873; font-weight: bold } /* Name.Tag */
+body .nv { color: #bb60d5 } /* Name.Variable */
+body .ow { color: #007020; font-weight: bold } /* Operator.Word */
+body .w { color: #bbbbbb } /* Text.Whitespace */
+body .mf { color: #40a070 } /* Literal.Number.Float */
+body .mh { color: #40a070 } /* Literal.Number.Hex */
+body .mi { color: #40a070 } /* Literal.Number.Integer */
+body .mo { color: #40a070 } /* Literal.Number.Oct */
+body .sb { color: #4070a0 } /* Literal.String.Backtick */
+body .sc { color: #4070a0 } /* Literal.String.Char */
+body .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #4070a0 } /* Literal.String.Double */
+body .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #4070a0 } /* Literal.String.Heredoc */
+body .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+body .sx { color: #c65d09 } /* Literal.String.Other */
+body .sr { color: #235388 } /* Literal.String.Regex */
+body .s1 { color: #4070a0 } /* Literal.String.Single */
+body .ss { color: #517918 } /* Literal.String.Symbol */
+body .bp { color: #007020 } /* Name.Builtin.Pseudo */
+body .vc { color: #bb60d5 } /* Name.Variable.Class */
+body .vg { color: #bb60d5 } /* Name.Variable.Global */
+body .vi { color: #bb60d5 } /* Name.Variable.Instance */
+body .il { color: #40a070 } /* Literal.Number.Integer.Long */
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="texbases">
+<h1 class="title">TeXBases</h1>
+
+<div class="contents topic" id="sommaire">
+<p class="topic-title first">Sommaire</p>
+<ul class="simple">
+<li><a class="reference internal" href="#mise-en-garde" id="id1">Mise en garde</a></li>
+<li><a class="reference internal" href="#pourquoi" id="id2">Pourquoi ?</a></li>
+<li><a class="reference internal" href="#les-choix" id="id3">Les choix</a></li>
+<li><a class="reference internal" href="#fonctionnalit-s" id="id4">Fonctionnalités</a></li>
+<li><a class="reference internal" href="#utilisation" id="id5">Utilisation</a></li>
+<li><a class="reference internal" href="#t-l-chargement" id="id6">Téléchargement</a></li>
+<li><a class="reference internal" href="#changelog" id="id7">Changelog:</a></li>
+<li><a class="reference internal" href="#contact" id="id8">Contact</a></li>
+</ul>
+</div>
+<a class="reference external image-reference" href="/home/kib/Bureau/RST/TeXBases/img/TeXBases2.png"><div align="center" class="align-center"><img alt="alternativeText" class="align-center" src="/home/kib/Bureau/RST/TeXBases/img/TeXBases2_small.png" style="width: 432.0px; height: 249.0px;" /></div>
+</a>
+<hr class="docutils" />
+<a class="reference external image-reference" href="/home/kib/Bureau/RST/TeXBases/img/TeXBases3.png"><div align="center" class="align-center"><img alt="alternativeText" class="align-center" src="/home/kib/Bureau/RST/TeXBases/img/TeXBases3_small.png" style="width: 432.0px; height: 249.0px;" /></div>
+</a>
+<hr class="docutils" />
+<a class="reference external image-reference" href="/home/kib/Bureau/RST/TeXBases/img/TeXBases.png"><div align="center" class="align-center"><img alt="alternativeText" class="align-center" src="/home/kib/Bureau/RST/TeXBases/img/TeXBases_small.png" style="width: 432.0px; height: 249.0px;" /></div>
+</a>
+<div class="section" id="mise-en-garde">
+<h1><a class="toc-backref" href="#id1">Mise en garde</a></h1>
+<p>Ce logiciel est une beta version, n'attendez pas de lui des fonctionnalités
+avancées. Sachez enfin que TeXBases est ma première application utilisant le
+toolkit Gtk avec Python et que je suis loin de le maîtriser autant que Qt4.</p>
+<p>J'ai fait ce choix uniquement parce que seul Gtk me permettait d'avoir une vue
+réèlle d'un document pdf par le biais de la librairie Poppler.</p>
+<p>Il reste pour le moment des incohérences nombreuses, citons :</p>
+<ul>
+<li><p class="first">un menu est visible mais non utilisable.</p>
+</li>
+<li><p class="first">on ne peut pas modifier un fichier édité, tout simplement parce que la
+sauvegarde n'a pas encore été implémentée.</p>
+</li>
+<li><p class="first">Dans l'arbre des documents, les niveaux et chapitres possèdent des cases
+dont il ne faut surtout pas se servir (ils ne servent que pour les
+documents LaTeX).</p>
+</li>
+<li><p class="first">les gabarits LaTeX sont modifiables dans le répertoire 'templates' :</p>
+<ul>
+<li><p class="first"><cite>faireExoPdf.tex</cite> est le gabarit permettant le rendu de votre exercice au
+format pdf, je l'ai adapté pour satisfaire mes besoins. Il y a donc de
+grandes chances qu'il ne vous satisfasse pas. Sachez cependant que vous ne
+devez garder la variable <cite>$exercices</cite> telle quelle dans celui-ci.</p>
+</li>
+<li><p class="first"><cite>feuille_Exo_1</cite> est le gabarit permettant le rendu de votre document
+final à partir du panier d'exercices. Là encore, gardez la variable
+<cite>$exercices</cite>. Vous pouvez créer les vôtres, c'est le but !</p>
+</li>
+<li><p class="first">Entre deux exercices, on peut placer ce que l'on veut grâce à un gabarit
+nommé <cite>Ex_templ</cite> que vous trouvez cette fois-ci dans le source même de
+TeXBases, à savoir dans <cite>texbases.py</cite>. Cette variable texte commence vers
+la ligne 50 et est codée pour le moment comme suit :</p>
+<div class="highlight"><pre><span class="c"># Un petit template entre chaque exo</span>
+<span class="n">Ex_templ</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="s">r&quot;&quot;&quot;</span>
+<span class="s">%----------------------</span>
+<span class="si">% E</span><span class="s">xercice numéro $numexo</span>
+<span class="s">%----------------------</span>
+<span class="s">\exo</span>
+<span class="s">\par</span>
+<span class="s">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+<p>Ici, <cite>exo</cite> est une commande personnelle, remplacez-là par la vôtre.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="pourquoi">
+<h1><a class="toc-backref" href="#id2">Pourquoi ?</a></h1>
+<p>Pour administrer une base de données de documents LaTeX (d'autres
+formats sont aussi supportés, comme MetaPost et Asymptote) comme le font les
+sites de <a class="reference external" href="http://melusine.eu.org/syracuse/poulecl/">Tex au Collège</a> ,
+<a class="reference external" href="http://www.exomatik.net/">ExoMatik</a> , mais en local, c'est à dire au
+niveau de votre machine et sans avoir besoin d'une connexion Internet.</p>
+</div>
+<div class="section" id="les-choix">
+<h1><a class="toc-backref" href="#id3">Les choix</a></h1>
+<p>Pour mettre au point un tel système, il a fallu faire un choix parmi une
+multitude de possibilités.</p>
+<p>La première était d'utiliser une base de données (bdd), mais ce n'est pas
+celle qui a été retenue.</p>
+<p>En guise de bdd, TeXBases utilise simplement des répertoires suivant
+le modèle</p>
+<pre class="literal-block">
+Repertoire Racine/
+  /Niveau
+    /Theme1
+      document1
+      document2
+      etc.
+    /Theme2
+  /Niveau2
+  etc.
+</pre>
+<p>Sachant que :</p>
+<ul class="simple">
+<li>Un niveau sera par exemple une classe (6ème, 1èreS, etc.);</li>
+<li>Un thème sera par exemple un chapitre (inéquations, barycentres, etc.);</li>
+<li>Un document sera un fichier d'extension .tex, .mp, .asy;</li>
+</ul>
+</div>
+<div class="section" id="fonctionnalit-s">
+<h1><a class="toc-backref" href="#id4">Fonctionnalités</a></h1>
+<p>Pour le moment, TeXBases se contente de faire le minimum, à savoir :</p>
+<ul class="simple">
+<li>Visualiser (et pas éditer, c'est prévu mais ce n'est pas encore
+implémenté) le contenu d'un document (LaTeX, MetaPost ou Asymptote);</li>
+<li>Visualiser ceux-ci au format pdf;</li>
+<li>Composer un document final à partir d'un modèle (plusieurs choix seront
+possibles par la suite) et de votre selection;</li>
+</ul>
+</div>
+<div class="section" id="utilisation">
+<h1><a class="toc-backref" href="#id5">Utilisation</a></h1>
+<p>On se déplace dans l'arbre des documents en cliquant sur les petits triangles
+pour plier/déplier le contenu de celui-ci.</p>
+<p>Une fois sur un document &quot;tex&quot;, cliquer deux fois dessus ouvre sa
+vue dans l'éditeur et dans la vue pdf. (Si celle-ci n'est pas disponible, le
+programme se charge de le faire automatiquement).</p>
+<p>Cliquer sur la case de la colonne 'Panier d'exercices' d'un document permet de
+placer/d'enlver celui-ci du panier. Une fois votre panier rempli, Appuyer sur
+le bouton 'Composer'. Le document final apparaîtra dans le répertoire
+'sortie' de TexBases.</p>
+</div>
+<div class="section" id="t-l-chargement">
+<h1><a class="toc-backref" href="#id6">Téléchargement</a></h1>
+<p>TeXBases est pour le moment disponible par le biais du gestionnaire de
+version Git par la commande suivante</p>
+<pre class="literal-block">
+git://github.com/kib2/texbases.git
+</pre>
+<p>Vous pouvez aussi accéder à sa page sur GitHub par ici <a class="reference external" href="http://github.com/kib2/texbases/tree/master">TeXBases sur GitHub</a> .</p>
+<p>TeXBases dépend de :</p>
+<ul class="simple">
+<li>Python 2.5, PyGtk2;</li>
+<li>PyGtkSourceView2 que vous trouverez ici : <a class="reference external" href="https://launchpad.net/poppler-python">https://launchpad.net/poppler-python</a></li>
+<li>PyPoppler que vous trouverez par là : <a class="reference external" href="http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.1/">http://ftp.gnome.org/pub/GNOME/sources/pygtksourceview/2.1/</a></li>
+</ul>
+<p>Il n'a été testé que sous Linux/Ubuntu Gutsy.</p>
+</div>
+<div class="section" id="changelog">
+<h1><a class="toc-backref" href="#id7">Changelog:</a></h1>
+<ul class="simple">
+<li>06.04.2008 :<ul>
+<li>Un gros travail a été réalisé sur les bases d'exos.
+En fait, j'ai réussi à récupérer entièrement la base
+Collège de Syracuse à l'aide d'un script que j'ai écrit.
+Je ne la donne pas ici entièrement, faute de place.</li>
+<li>Possibilité de sauvegarder les modifications faites
+au fichier en cours d'édition. Ajout du bouton 'Sauvegarder'.</li>
+<li>Ajout de la propriété 'TreeFold' dans le fichier de config
+qui peut prendre les valeurs 0 ou 1. Si elle est fixée à 1,
+l'arbre des documents sera entièrement déplié, et ne le sera
+pas sinon.</li>
+</ul>
+</li>
+<li>05.04.2008 :<ul>
+<li>Renommage massif de fonctions et réorganisation du code.</li>
+<li>Ajout d'un dialogue 'A propos&quot;, même s'il n'est pas encore
+visible.</li>
+<li>Ajout du fichier de configuration pour se debarasser des
+variables globales.</li>
+<li>Ajout d'un dialogue pour pouvoir choisir sa feuille de
+composition d'exercices.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="contact">
+<h1><a class="toc-backref" href="#id8">Contact</a></h1>
+<p>Si vous avez des remarques/idées/critiques, adressez-vous à <tt class="docutils literal"><span class="pre">kib2&#64;free.fr</span></tt>.
+(On pourrait y travailler à plusieurs, d'autant que je ne maîtrise pas encore
+assez bien PyGtk2)</p>
+</div>
+</div>
+</body>
+</html>
