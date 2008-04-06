@@ -1,0 +1,155 @@
+verbatimtex
+%&latex
+\documentclass{article}
+\usepackage[frenchb]{babel}
+\begin{document}
+etex
+
+input geometriesyr16;
+
+figure(0,0,8u,8u);
+pair O,A,B,C,D;
+B=u*(2,3);
+A-B=u*(2,3);
+C=rotation(A,B,-60);
+O=CentreCercleC(A,B,C);
+D=symetrie(B,O);
+trace polygone(A,B,C);
+trace chemin(A,D,B);
+trace cercles(O,B);
+marque_p:="plein";
+nomme.bot(O);
+marque_p:="non";
+nomme.lft(B);
+nomme.lrt(C);
+nomme.rt(D);
+nomme.top(A);
+fin;
+figureespace(-10u,-10u,10u,10u);
+color A,B,C,D,E,F,G,H,I;
+Initialisation(5,30,20,650);
+B=(1,0,0);
+H-B=(0,0,2/3);
+C=(0,0,0);
+A=(1,2.25/7.5,0);
+D-A=C-B;
+G-C=H-B;
+E-A=(0,0,1/2);
+F-D=E-A;
+I-B=E-A;
+NbS:=8;
+Sommet1=A;
+Sommet2=D;
+Sommet3=C;
+Sommet4=B;
+Sommet5=E;
+Sommet6=F;
+Sommet7=G;
+Sommet8=H;
+NF:=6;
+Fc[100]:=4;Fc[101]:=1;Fc[102]:=5;Fc[103]:=8;Fc[104]:=4;
+Fc[200]:=4;Fc[201]:=1;Fc[202]:=2;Fc[203]:=6;Fc[204]:=5;
+Fc[300]:=4;Fc[301]:=1;Fc[302]:=4;Fc[303]:=3;Fc[304]:=2;
+Fc[400]:=4;Fc[401]:=4;Fc[402]:=8;Fc[403]:=7;Fc[404]:=3;
+Fc[500]:=4;Fc[501]:=3;Fc[502]:=7;Fc[503]:=6;Fc[504]:=2;
+Fc[600]:=4;Fc[601]:=5;Fc[602]:=6;Fc[603]:=7;Fc[604]:=8;
+DessineObjet;
+trace segment(E,I) dashed evenly;
+nomme.llft(B);
+nomme.bot(A);
+nomme.lrt(D);
+nomme.urt(F);
+nomme.top(G);
+nomme.top(H);
+nomme.urt(C);
+nomme.lft(I);
+finespace;
+u:=7.5mm;
+figure(0,0,5u,8u);
+pair A,B,E,H,I;
+B=u*(1.5,1);
+A-B=u*(2.25,0);
+H-B=u*(0,5);
+E-A=u*(0,2);
+trace polygone(B,H,E,A);
+I=2/5[B,H];
+trace segment(E,I) dashed evenly;
+trace codeperp(H,I,E,5);
+trace codeperp(E,A,B,5);
+trace codeperp(H,B,A,5);
+trace appelation(B,A,-2mm,btex 2,25 etex);
+trace appelation(A,E,-3mm,btex 2 etex);
+trace cotationmil(H,B,-3mm,10,btex 5 etex);
+nomme.llft(B);
+nomme.lrt(A);
+nomme.urt(E);
+nomme.top(H);
+fin;
+figure(0,0,5u,8u);
+pair A,B,E,H,I;
+B=u*(1.5,1);
+A-B=u*(2.25,0);
+H-B=u*(0,5);
+E=demidroite(H,rotation(B,H,45)) intersectionpoint perpendiculaire(B,A,A);
+trace polygone(B,H,E,A);
+I-E=B-A;
+trace segment(E,I) dashed evenly;
+trace codeperp(H,I,E,5);
+trace codeperp(E,A,B,5);
+trace codeperp(H,B,A,5);
+trace appelation(B,A,-2mm,btex 2,25 etex);
+trace cotationmil(H,B,-3mm,10,btex 5 etex);
+trace Codeangle(I,H,E,0,btex 45\degres etex);
+nomme.llft(B);
+nomme.lrt(A);
+nomme.urt(E);
+nomme.top(H);
+fin;
+figure(0,0,5u,8u);
+pair A,B,E,H,I;
+B=u*(1.5,1);
+A-B=u*(2.25,0);
+H-B=u*(0,5);
+E=demidroite(H,rotation(B,H,60)) intersectionpoint perpendiculaire(B,A,A);
+trace polygone(B,H,E,A);
+I-E=B-A;
+trace segment(E,I) dashed evenly;
+trace codeperp(H,I,E,5);
+trace codeperp(E,A,B,5);
+trace codeperp(H,B,A,5);
+trace appelation(B,A,-2mm,btex 2,25 etex);
+trace cotationmil(H,B,-3mm,10,btex 5 etex);
+marque_a:=10;
+trace Codeangle(I,H,E,0,btex 60\degres etex);
+nomme.llft(B);
+nomme.lrt(A);
+nomme.urt(E);
+nomme.top(H);
+fin;
+
+input courbescp13;
+input TEX;
+%beginfig(6);
+u:=1cm;
+figure(0,0,17u,11u);
+  cadre((0,0),(17,11));
+  origine((1,1));
+  unites(0.15,2);
+  trace axes;
+  for k=1 upto 8:
+    trace demidroite(pp(10*k,0),pp(10*k,1)) withcolor gris dashed evenly;
+  endfor;
+  for k=1 upto 9:
+    trace demidroite(pp(0,0.5*k),pp(1,0.5*k)) withcolor gris dashed evenly;
+  endfor;
+  Legendex.ulft(btex Angle $\widehat{IHE}$ en degr\'es etex);
+  legendey(btex Longueur $AE$ en m etex);
+  trace courbe1(30,70,100,5-2.25/(sind(x)/cosd(x)));
+  for k=1 upto 8:
+    label.bot(TEX(""&decimal(10*k)&""),pp(10*k,0));
+  endfor;
+  for k=1 upto 9:
+    label.lft(TEX(""&decimal(0.5*k)&""),pp(0,.5*k));
+  endfor;
+fin;
+end

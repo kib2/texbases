@@ -1,0 +1,18 @@
+%@P:exocorcp
+%@Dif:3
+Une classe avait commandé 35 manuels d'anglais et 35 de géographie
+pour un total de 630~\textgreek{\euro}. Démuni, le libraire peut livrer
+tous les manuels d'anglais, mais seulement 24 de géographie. La
+facture est alors de 514,50~\textgreek{\euro}.
+\\Trouve le prix d'un manuel d'anglais et celui d'un manuel de
+géographie.
+%@Correction:
+\opsub*{630}{514,50}{a}\opsub[style=text]{630}{514,50}~\textgreek{\euro} pour 11 livres de géographie.
+\par
+\opdiv*{a}{11}{c}{d}\opdiv[style=text]{a}{11}~\textgreek{\euro} pour un livre de géographie.\par
+\opmul*{35}{c}{e}\opmul[style=text]{35}{c}~\textgreek{\euro} pour 35 livres de géographie.
+\par
+\opsub*{630}{e}{f}\opsub[style=text]{630}{e}~\textgreek{\euro} pour les 35 livres d'anglais.
+\par
+\opdiv[style=text]{f}{35}~\textgreek{\euro} pour 1 livre d'anglais.
+%@Commentaire: La lecture est essentielle pour trouver la différence de livres effectivement livrés.

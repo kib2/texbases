@@ -1,0 +1,41 @@
+%@Auteur: François Meria\par
+\vskip 1cm
+
+\begin{center}
+\psset{unit=1.25} \pspicture(-3.3,-1)(5.5,5.5)
+\pstGeonode[PointSymbol=+,PosAngle=-135](0,0){A}
+    \pstGeonode[PointSymbol=+,PosAngle=-45](5,0){B}
+    \pstGeonode[PointSymbol=+,PosAngle=180](-2,3){C}
+    \pstGeonode[PointSymbol=+,PosAngle=90](5,5){D}
+\pspolygon(0,0)(5,0)(5,5)(-2,3)
+\pstCurvAbsNode[PointSymbol=none,PointName=none]{A}{C}{m_1}{\pstDistVal{1.8}}
+    \pstCurvAbsNode[PointSymbol=none,PointName=none]{A}{C}{m_2}{\pstDistVal{-1.5}}
+    \pstArcOAB{A}{m_2}{m_1}
+    \pstCurvAbsNode[PointSymbol=none,PointName=none]{A}{C}{t}{\pstDistVal{1.25}}
+    \pstLineAB[arrows=<->]{t}{A} \mput*{4~cm}
+\pstCurvAbsNode[PointSymbol=none,PointName=none]{D}{C}{n_1}{\pstDistVal{-2}}
+    \pstCurvAbsNode[PointSymbol=none,PointName=none]{D}{C}{n_2}{\pstDistVal{1.5}}
+    \pstArcOAB{D}{n_1}{n_2}
+    \pstCurvAbsNode[PointSymbol=none,PointName=none]{D}{C}{p}{\pstDistVal{-1.75}}
+    \pstLineAB[arrows=<->]{p}{D} \mput*{7~cm}
+\pcline{<->}(0,-0.5)(5,-0.5) \lput*{:U}{5~cm}
+    \pstRightAngle{A}{B}{D}
+    \psset{linewidth=0.3mm}
+    \pstLineAB{A}{C}
+    \pstLineAB{C}{D}
+    \pstSegmentMark[SegmentSymbol=pstslashh]{B}{D}
+    \pstSegmentMark[SegmentSymbol=pstslashh]{A}{B}
+\endpspicture
+\end{center}
+
+\vskip 1cm
+
+\centerline{\textbf{CONSIGNES}}
+
+\vskip 1cm
+
+\begin{myenumerate}
+    \item \'Ecrire un énoncé de construction, le plus court possible, de la figure ci-dessus.
+    \item Reproduire la figure ci-dessus étape par étape, en
+    commençant par tracer le segment $[AB]$.
+\end{myenumerate}

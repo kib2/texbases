@@ -1,0 +1,14 @@
+%@P:exocorcp
+%@Dif:3
+Nicolas pensait acheter trois disques compacts à 17,05~\textgreek{\euro}
+mais il lui manque 2,64~\textgreek{\euro}. Combien Nicolas a-t-il
+d'argent ? \\Il revient chez lui prendre de l'argent, achète les trois CD
+et avec le reste de l'argent, il s'achète un magazine à
+1,91~\textgreek{\euro}. Le libraire lui rend alors
+0,02~\textgreek{\euro}.\\Quelle somme a-t-il pris à son retour chez lui
+?
+%@Correction:
+\par\hspace{1cm}\opmul*{17,05}{3}{a}\opmul{17,05}{3}\kern1cm\opsub*{a}{2,64}{b}\opsub[carrysub=true]{a}{2,64}\kern2cm Nicolas a \opprint{b}~\textgreek{\euro}.
+\par
+\opadd*{a}{1,91}{c}\opadd{a}{1,91}\kern1cm\opadd*{c}{0,02}{d}\opadd{c}{0,02}\kern1cm\opsub*{d}{b}{e}\opsub[carrysub=true]{d}{b}\kern1cm Nicolas a repris \opprint{e}~\textgreek{\euro}.
+%@Commentaire: Exercice concret. Attention à la lecture.

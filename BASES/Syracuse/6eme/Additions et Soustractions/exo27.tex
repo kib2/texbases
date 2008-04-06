@@ -1,0 +1,59 @@
+%@P:exocorcp
+%@Dif:2
+Calcule les sommes suivantes en regroupant astucieusement les nombres :
+\begin{myenumerate}
+\item $8,17+6,7+6,83+3,3$
+\item $3,4+0,88+1,6+0,12$
+\item $6,8+5,7+4,3+3,2$
+\item $12,1+12,4+12,9+12,6$
+\end{myenumerate}
+%@Correction:
+\begin{multicols}{2}
+\begin{myenumerate}
+  \item\subitem{}\par
+    \begin{center}
+      \begin{tabular}{c}
+$\rnode{A}{8,17}+\rnode{B}{6,7}+\rnode{C}{6,83}+\rnode{D}{3,3}$\\
+\\
+$\rnode{E}{15}\quad+\quad\rnode{F}{10}$\\
+\\
+$\rnode{G}{25}$\\
+      \end{tabular}
+    \end{center}
+\ncline[nodesep=1mm]{->}{A}{E}\ncline[nodesep=1mm]{->}{C}{E}\ncline[nodesep=1mm]{->}{B}{F}\ncline[nodesep=1mm]{->}{D}{F}\ncline[nodesep=1mm]{->}{E}{G}\ncline[nodesep=1mm]{->}{F}{G}
+  \item\subitem{}\par
+    \begin{center}
+      \begin{tabular}{c}
+$\rnode{A}{3,4}+\rnode{B}{0,88}+\rnode{C}{1,6}+\rnode{D}{0,12}$\\
+\\
+$\rnode{E}{5}\quad+\quad\rnode{F}{1}$\\
+\\
+$\rnode{G}{6}$\\
+      \end{tabular}
+    \end{center}
+\ncline[nodesep=1mm]{->}{A}{E}\ncline[nodesep=1mm]{->}{C}{E}\ncline[nodesep=1mm]{->}{B}{F}\ncline[nodesep=1mm]{->}{D}{F}\ncline[nodesep=1mm]{->}{E}{G}\ncline[nodesep=1mm]{->}{F}{G}
+  \item\subitem{}\par
+    \begin{center}
+      \begin{tabular}{c}
+$\rnode{A}{6,8}+\rnode{B}{5,7}+\rnode{C}{4,3}+\rnode{D}{3,2}$\\
+\\
+$\rnode{E}{10}\quad+\quad\rnode{F}{10}$\\
+\\
+$\rnode{G}{20}$\\
+      \end{tabular}
+    \end{center}
+\ncline[nodesep=1mm]{->}{A}{E}\ncline[nodesep=1mm]{->}{D}{E}\ncline[nodesep=1mm]{->}{B}{F}\ncline[nodesep=1mm]{->}{C}{F}\ncline[nodesep=1mm]{->}{E}{G}\ncline[nodesep=1mm]{->}{F}{G}
+  \item\subitem{}\par
+    \begin{center}
+      \begin{tabular}{c}
+$\rnode{A}{12,1}+\rnode{B}{12,4}+\rnode{C}{12,9}+\rnode{D}{12,6}$\\
+\\
+$\rnode{E}{24,5}\quad+\quad\rnode{F}{25,5}$\\
+\\
+$\rnode{G}{50}$\\
+      \end{tabular}
+    \end{center}
+\ncline[nodesep=1mm]{->}{A}{E}\ncline[nodesep=1mm]{->}{B}{E}\ncline[nodesep=1mm]{->}{C}{F}\ncline[nodesep=1mm]{->}{D}{F}\ncline[nodesep=1mm]{->}{E}{G}\ncline[nodesep=1mm]{->}{F}{G}
+\end{myenumerate}
+\end{multicols}
+%@Commentaire: Exercice de calcul mental. Les regroupements sont assez évidents.

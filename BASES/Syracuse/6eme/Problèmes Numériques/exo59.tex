@@ -1,0 +1,12 @@
+%@P:exocorcp
+%@Dif:3
+Pour faire des confitures, on achète 9~kg de cerises; on y ajoute
+750~g de sucre par kilogramme de fruits. \`A la cuisson, le mélange
+perd 3,500~kg de sa masse.\par Quelle est la masse de confiture
+obtenue ?\par Combien de pots de 350~g pourra-t-on remplir ?
+%@Correction:
+\opmul*{9}{750}{a}\opmul[style=text]{9}{750}~g de sucre à ajouter.
+\par Avant la cuisson, il y a donc \opdiv*{a}{1000}{a}{b}\opadd*{9}{a}{b}\opadd[style=text]{9}{a}~kg de cerises.
+\par Après la cuisson, il reste \opsub*{b}{3,5}{c}\opsub[style=text]{b}{3,5}~kg de confiture (ou \opmul*{c}{1000}{d}\opmul[style=text]{c}{1000}~g de confiture).\par
+On peut faire $\opprint{d}\div350=35$ pots de confiture.
+%@Commentaire: Petit exercice où toutes les opérations sont représentées. Elles sont néanmoins très simples.

@@ -1,0 +1,25 @@
+input geometriesyr16;
+figure(0,-u,10u,10u);
+u:=6mm;
+pair O,E,B,C,H;
+O=u*(5,5);
+path cc;
+cc=cercles(O,3u);
+B=pointarc(cc,220);
+C=pointarc(cc,320);
+trace segment(B,C);
+trace cc;
+E=pointarc(cc,120);
+H=symetrie(E,B,C);
+trace segment(E,H);
+trace codeperp(C,segment(E,H) intersectionpoint segment(B,C),E,6);
+trace codesegments(E,segment(E,H) intersectionpoint segment(B,C),segment(E,H) intersectionpoint segment(B,C),H,2);
+marque_p:="croix";
+nomme.top(O);
+nomme.lft(H);
+marque_p:="non";
+nomme.top(E);
+nomme.llft(B);
+nomme.lrt(C);
+fin;
+end

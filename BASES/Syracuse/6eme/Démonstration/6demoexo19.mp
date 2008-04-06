@@ -1,0 +1,34 @@
+input geometriesyr16;
+figuremainlevee(0,0,10u,10u);
+  pair A,F,B,C,D,E;
+  A=u*(1,1);nomme.llft(A);
+  F-A=u*(3,0);nomme.bot(F);
+  B=rotation(F,A,60);nomme.top(B);
+  trace polygone(A,B,F);
+  D=rotation(A,F,-150);nomme.rt(D);
+  E=rotation(D,F,60);nomme.urt(E);
+  C-B=D-F;nomme.top(C);
+  trace chemin(B,C,D,F);
+  trace codeperp(F,B,C,5);
+  trace codeperp(B,C,D,5);
+  trace codeperp(C,D,F,5);
+  trace chemin(F,E,D);
+  trace Codelongueur(A,F,F,B,F,E,E,D,D,C,F,D,B,C,A,B,2);
+  finmainlevee;
+  u:=sqrt(2)*u;
+figure(0,0,11u,8.25u);
+  trace feuillet withcolor blanc;
+  pair A,F,B,C,D,E;
+  A=u*(1,2);
+  F-A=u*(5,-1);
+  B=rotation(F,A,60);
+  D=rotation(A,F,-150);
+  E=rotation(D,F,60);
+  C-B=D-F;
+  trace segment(B,C);
+  trace marquesegment(B,C);
+  nomme.ulft(B);
+  nomme.urt(C);
+fin;
+end
+  

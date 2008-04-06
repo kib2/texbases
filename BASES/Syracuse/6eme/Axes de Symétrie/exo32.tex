@@ -1,0 +1,16 @@
+%@Auteur: François Meria\par
+Sur la figure suivante, repasser en rouge la bissectrice de
+l'angle $\widehat{xSy}$ et en vert la bissectrice de l'angle
+$\widehat{mSy}$.
+\begin{center}
+    \pspicture(5,5)
+        \pstGeonode[PointSymbol=none,PosAngle={235,0,45}](0,0){S}(5,0){x}(3,4){y}
+        \pstLineAB{S}{x}
+        \pstLineAB{S}{y}
+        \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{y}{t}
+        \pstBissectBAC[linecolor=black,PointSymbol=none]{t}{S}{y}{m}
+        \pstBissectBAC[linecolor=black,PointSymbol=none]{m}{S}{y}{n}
+        \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{t}{p}
+        \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{p}{q}
+    \endpspicture
+\end{center}

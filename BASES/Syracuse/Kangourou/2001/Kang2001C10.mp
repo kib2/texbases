@@ -1,0 +1,22 @@
+input geometriesyr16;
+figure(0,0,5u,5u);
+pair A,B,C,D,M,N,O;
+A=u*(1,1);
+B-A=u*(3,0);
+C-B=u*(0,3);
+D-C=A-B;
+O=segment(A,C) intersectionpoint demidroite(D,rotation(A,D,60));
+M=2/5[C,B];
+N=segment(A,D) intersectionpoint demidroite(M,O);
+trace polygone(A,B,C,D);
+trace segment(A,C);
+trace segment(M,N);
+nomme.llft(A);
+nomme.lrt(B);
+nomme.rt(M);
+nomme.urt(C);
+nomme.ulft(D);
+nomme.lft(N);
+nomme.top(O);
+fin;
+end

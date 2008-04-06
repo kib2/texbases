@@ -1,0 +1,17 @@
+\documentclass[a4paper,12pt,oneside]{article}
+\usepackage{kib_ds}
+\begin{document}
+input courbescp13;
+beginfig(1);
+  cadre((0,0),(9,7));
+  origine((1,0.5));
+  unites(4,2);
+  draw millimetrepourcourbe withcolor gris;
+  draw axes;
+  graduationx(btex 1 etex,1);
+  graduationy(btex 10 etex,1);
+  legendex(btex $I$ (en A) etex);
+  legendey(btex $U$ (en V) etex);
+endfig;
+end
+\end{document}

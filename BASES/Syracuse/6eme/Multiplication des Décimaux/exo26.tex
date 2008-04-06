@@ -1,0 +1,16 @@
+%@P:exocorcp
+%@Dif:2
+\opset{voperator=bottom,decimalsepsymbol={,}}
+Les multiplications ci-dessous sont correctes au niveau des calculs mais il manque la virgule dans le résultat final. Replace la correctement.
+\\
+\opmul[displayshiftintermediary=all,resultstyle.d=\troucp{}]{24,5}{12,7}\hfill
+\opmul[displayshiftintermediary=all,resultstyle.d=\troucp{}]{0,25}{1,7}\hfill
+\opmul[displayshiftintermediary=all,resultstyle.d=\troucp{}]{2,5}{3,14}\hfill
+\opmul[displayshiftintermediary=all,resultstyle.d=\troucp{}]{45}{2,7}\hfill
+\opmul[displayshiftintermediary=all,resultstyle.d=\troucp{}]{4,218}{1,7}
+%@Correction:
+\opmul{24,5}{12,7}\hfill
+\opmul{2,5}{3,14}\hfill
+\opmul{45}{2,7}\hfill
+\opmul{4,218}{1,7}
+%@Commentaire: La position de la virgule est importante, les élèves ayant tendance à ne compter que les chiffres du 1\ier\ facteur.

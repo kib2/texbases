@@ -1,0 +1,163 @@
+%@Auteur: François Meria\par
+\begin{multicols}{2}
+À partir de la figure 1 ci-contre, on veut obtenir la figure 2
+puis la figure 3, uniquement à l'aide de la symétrie axiale.
+\begin{center}
+    \psset{unit=1cm}
+        \pspicture(-2,-0.5)(5,2.2)
+            \rput{25}{
+            \pstGeonode[PointSymbol=none,PosAngle={-45,-45,-45,-45,-45,-45,90}](0,0){O}(1,0){I}(2,0){J}(3,0){K}(4,0){L}(5,0){M}(0,2){A}
+            \pstSegmentMark[SegmentSymbol=pstslashh]{O}{I}
+            \pstSegmentMark[SegmentSymbol=pstslashh]{I}{J}
+            \pstSegmentMark[SegmentSymbol=pstslashh]{J}{K}
+            \pstSegmentMark[SegmentSymbol=pstslashh]{K}{L}
+            \pstSegmentMark[SegmentSymbol=pstslashh]{L}{M}
+            \pstLineAB{A}{O}
+            \pstLineAB{A}{I}
+            \pstLineAB{A}{J}
+            \pstLineAB{A}{K}
+            \pstLineAB{A}{L}
+            \pstLineAB{A}{M}
+            }
+            \put(2,0){Figure 1}
+        \endpspicture
+\end{center}
+\end{multicols}
+
+\begin{enumerate}[(a)]
+    \item Reproduire la figure 1 en prenant $OA=2$~cm et
+    $OI=1$~cm.
+    \item Quels sont les axes de symétrie de la figure 2 ?
+    Compléter la figure 1 afin d'obtenir la figure 2.
+    \item Décrire avec précision les axes de symétrie de la figure
+    3. Compléter la figure 2 pour obtenir la figure 3.
+    \item Colorier la figure 3 à l'aide de deux couleurs en
+    alternant les couleurs.
+    \item Combien d'axes de symétrie possède la figure 3 ? Et la
+    figure coloriée ?
+\end{enumerate}
+
+\begin{center}
+    \psset{unit=1cm}
+        \pspicture(-5,-3)(5,2.5)
+          \rput{25}{
+            \pstGeonode[PointSymbol=none,PosAngle={-40,-40,-40,-40,-40,-40,90}](0,0){O}(1,0){I}(2,0){J}(3,0){K}(4,0){L}(5,0){M}(0,2){A}            \pstLineAB{A}{O}
+            \pstLineAB{A}{I}
+            \pstLineAB{A}{J}
+            \pstLineAB{A}{K}
+            \pstLineAB{A}{L}
+            \pstLineAB{A}{M}
+            \pstLineAB{O}{M}
+
+            \pstOrtSym[PointSymbol=none,PosAngle=-45]{O}{M}{A}{B}
+            \pstLineAB{B}{O}
+            \pstLineAB{B}{I}
+            \pstLineAB{B}{J}
+            \pstLineAB{B}{K}
+            \pstLineAB{B}{L}
+            \pstLineAB{B}{M}
+            \pstLineAB{B}{M}
+
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{I}{I_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{J}{J_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{K}{K_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{L}{L_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{M}{M_1}
+            \pstLineAB{O}{M_1}
+            \pstLineAB{A}{I_1}
+            \pstLineAB{A}{J_1}
+            \pstLineAB{A}{K_1}
+            \pstLineAB{A}{L_1}
+            \pstLineAB{A}{M_1}
+
+            \pstLineAB{B}{I_1}
+            \pstLineAB{B}{J_1}
+            \pstLineAB{B}{K_1}
+            \pstLineAB{B}{L_1}
+            \pstLineAB{B}{M_1}
+        }
+        \put(2,-2){Figure 2}
+        \endpspicture
+\end{center}
+
+\begin{center}
+    \psset{unit=1cm}
+        \pspicture(-5,-5)(6,2.5)
+        \rput{25}{
+            \pstGeonode[PointSymbol=none,PointName=none](0,0){O}(1,0){I}(2,0){J}(3,0){K}(4,0){L}(5,0){M}(0,1.4){A}
+            \pstLineAB{A}{O}
+            \pstLineAB{A}{I}
+            \pstLineAB{A}{J}
+            \pstLineAB{A}{K}
+            \pstLineAB{A}{L}
+            \pstLineAB{A}{M}
+            \pstLineAB{O}{M}
+
+            \pstOrtSym[PointSymbol=none,PointName=none]{O}{M}{A}{B}
+            \pstLineAB{B}{O}
+            \pstLineAB{B}{I}
+            \pstLineAB{B}{J}
+            \pstLineAB{B}{K}
+            \pstLineAB{B}{L}
+            \pstLineAB{B}{M}
+            \pstLineAB{B}{M}
+
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{I}{I_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{J}{J_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{K}{K_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{L}{L_1}
+            \pstOrtSym[PointSymbol=none,PointName=none]{A}{B}{M}{M_1}
+            \pstLineAB{O}{M_1}
+            \pstLineAB{A}{I_1}
+            \pstLineAB{A}{J_1}
+            \pstLineAB{A}{K_1}
+            \pstLineAB{A}{L_1}
+            \pstLineAB{A}{M_1}
+
+            \pstLineAB{B}{I_1}
+            \pstLineAB{B}{J_1}
+            \pstLineAB{B}{K_1}
+            \pstLineAB{B}{L_1}
+            \pstLineAB{B}{M_1}
+
+            \pstSymO[PointSymbol=none,PointName=none]{B}{A}{C}
+            \pstSymO[PointSymbol=none,PointName=none]{B}{I_1}{I_2}
+            \pstSymO[PointSymbol=none,PointName=none]{B}{J_1}{J_2}
+            \pstSymO[PointSymbol=none,PointName=none]{B}{K_1}{K_2}
+            \pstSymO[PointSymbol=none,PointName=none]{B}{L_1}{L_2}
+            \pstSymO[PointSymbol=none,PointName=none]{B}{M_1}{M_2}
+            \pstLineAB{B}{C}
+            \pstLineAB{C}{I_2}
+            \pstLineAB{C}{J_2}
+            \pstLineAB{C}{K_2}
+            \pstLineAB{C}{L_2}
+            \pstLineAB{C}{M_2}
+            \pstLineAB{B}{I_2}
+            \pstLineAB{B}{J_2}
+            \pstLineAB{B}{K_2}
+            \pstLineAB{B}{L_2}
+            \pstLineAB{B}{M_2}
+
+            \pstOrtSym[PointSymbol=none,PointName=none]{B}{C}{I_2}{I_3}
+            \pstOrtSym[PointSymbol=none,PointName=none]{B}{C}{J_2}{J_3}
+            \pstOrtSym[PointSymbol=none,PointName=none]{B}{C}{K_2}{K_3}
+            \pstOrtSym[PointSymbol=none,PointName=none]{B}{C}{L_2}{L_3}
+            \pstOrtSym[PointSymbol=none,PointName=none]{B}{C}{M_2}{M_3}
+            \pstLineAB{B}{I_3}
+            \pstLineAB{B}{J_3}
+            \pstLineAB{B}{K_3}
+            \pstLineAB{B}{L_3}
+            \pstLineAB{B}{M_3}
+            \pstLineAB{C}{I_3}
+            \pstLineAB{C}{J_3}
+            \pstLineAB{C}{K_3}
+            \pstLineAB{C}{L_3}
+            \pstLineAB{C}{M_3}
+            \pstLineAB{M_2}{M_3}
+            %\pspolygon[fillstyle=solid,colorstyle=lightgray](0,1.4)(0,0)(1,0)
+            % pour pouvoir faire des polygones avec une couleur interne.
+        }
+
+        \put(3,-4){Figure 3}
+        \endpspicture
+\end{center}

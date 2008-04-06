@@ -1,0 +1,37 @@
+%@P:exocorcp
+%@Dif:2
+Recopie et complète le tableau. {\em Tous les calculs apparaîtront sur
+la copie}.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$&$y$&$x+y$&$x-y$\\
+\hline
+12,4&8,45&\ldots&\ldots\\
+\hline
+9,6&\ldots&12&\ldots\\
+\hline
+\ldots&1,04&9,1&\ldots\\
+\hline
+\ldots&3&\ldots&8\\
+\hline
+\end{tabular}
+\end{center}
+%@Correction:
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$&$y$&$x+y$&$x-y$\\
+\hline
+12,4&8,45&{\color{blue}\opadd[style=text]{12,4}{8,45}}&{\color{blue}\opsub[style=text]{12,4}{8,5}}\\
+\hline
+9,6&{\color{blue}\opsub[style=text]{12}{6,3}}\opsub*{12}{6,3}{y}&12&{\color{blue}\opsub[style=text]{9,6}{y}}\\
+\hline
+{\color{blue}\opsub*{9,1}{1,04}{x}\opsub[style=text]{9,1}{1,04}}&1,04&9,1&{\color{blue}\opsub[style=text]{x}{1,04}}\\
+\hline
+{\color{blue}\opadd*{8}{3}{x}\opadd[style=text]{8}{3}}&3&{\color{blue}\opadd[style=text]{x}{3}}&8\\
+\hline
+\end{tabular}
+\end{center}
+%@Commentaire:
+Résolution d'équations. Introduction au calcul littéral, on familiarise les élèves avec les lettres.

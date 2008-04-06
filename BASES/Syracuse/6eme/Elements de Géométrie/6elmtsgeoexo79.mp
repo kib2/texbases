@@ -1,0 +1,23 @@
+input geometriesyr16;
+figure(0,0,10u,10u);
+pair O,A,B,T;
+O=u*(2.5,2.5);
+T=pointarc(cercles(O,4u),20);
+path cc,cd;
+cc=cercles(O,2u);
+cd=cercles(T,3u);
+A=cc intersectionpoint cd;
+B=symetrie(A,O,T);
+trace cc;
+trace cd;
+trace cotation(pointarc(cc,250),O,0,2mm,btex 2~cm etex);
+trace cotation(O,T,0,2mm,btex 4~cm etex);
+trace cotation(T,pointarc(cd,80),0,2mm,btex 3~cm etex);
+marque_p:="croix";
+nomme.ulft(O);
+nomme.lrt(T);
+nomme.top(A);
+nomme.bot(B);
+marque_p:="non";
+fin;
+end

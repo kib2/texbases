@@ -1,0 +1,25 @@
+input geometriesyr16;
+figure(0,0,10u,10u);
+trace papiercahier withcolor orange;
+coinbg:=u*(1,1);
+coinbd:=u*(7,1);
+coinhd:=rotation(coinbg,coinbd,-90);
+coinhg:=coinhd+coinbg-coinbd;
+path coupure;
+coupure=coinbg--coinbd--1/4[coinbd,coinhd]..4/5[1/4[coinbg,coinhg],1/4[coinbd,coinhd]]..1/2[3/4[coinbg,coinbd],3/4[coinhg,coinhd]]..1/2[3/4[coinbg,coinhg],3/4[coinbd,coinhd]]..2/5[coinhg,coinhd]--coinhg--cycle;
+pair A,B,C,D;
+A=u*(2,2);
+B-A=u*(4,1.5);
+D=rotation(B,A,60);
+C-D=B-A;
+B:=3/5[A,B];
+trace polygone(A,B,C,D) withpen pencircle scaled1.25bp;
+clip currentpicture to coupure;
+trace coupure;
+marque_p:="creux";
+nomme.llft(A);
+nomme.lrt(B);
+nomme.ulft(D);
+marque_p:="non";
+fin;
+end

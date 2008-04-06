@@ -1,0 +1,23 @@
+input geometriesyr16;
+input outilssyr;
+figure(0,0,8.5u,8u);
+trace feuillet withcolor blanc;
+pair A,B;
+B=u*(1,1);
+A=u*(5,2);
+trace demidroite(A,B);
+marque_p:="croix";
+nomme.bot(A);
+nomme.bot(B);
+fin;
+figure(0,0,8.5u,8u);
+trace feuillet withcolor blanc;
+pair S,R;
+S=u*(8,1);
+R=u*(5,2);
+trace demidroite(R,S);
+marque_p:="croix";
+nomme.bot(R);
+nomme.bot(S);
+fin;
+end

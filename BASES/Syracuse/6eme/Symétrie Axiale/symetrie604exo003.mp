@@ -1,0 +1,28 @@
+input geometriesyr16;
+figure(0,0,5u,4u);
+pair A,E,B;
+trace grille(0.5) withcolor orange;
+A=placepoint(1,2);
+B=placepoint(4,2);
+E=placepoint(3,5);
+trace triangle(A,E,B);
+nomme.llft(A);
+nomme.lrt(B);
+nomme.top(E);
+trace droite(placepoint(5,1),placepoint(5,6));
+label.rt(btex $(d)$ etex,placepoint(5,7));
+fin;
+figure(0,0,5u,4u);
+pair A,E,B;
+trace grille(0.5) withcolor orange;
+A=placepoint(1,4);
+B=placepoint(4,4);
+E=placepoint(3,7);
+trace triangle(A,E,B);
+nomme.llft(A);
+nomme.lrt(B);
+nomme.top(E);
+trace droite(placepoint(2,1),placepoint(7,4));
+label.bot(btex $(d)$ etex,placepoint(7,4));
+fin;
+end

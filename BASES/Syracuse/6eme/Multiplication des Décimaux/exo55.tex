@@ -1,0 +1,24 @@
+%@Auteur: d'après IREM Strasbourg
+%@Dif:2
+\begin{myenumerate}
+  \item Effectue $12\times34$, puis complète le schéma suivant :
+\begin{center}
+\begin{tabular}{ccccc}
+\rnode{A}{12}&$\times$&\rnode{B}{34}&=&\rnode{C}{\ldots}\\
+\\
+\\
+\rnode{D}{0,12}&$\times$&\rnode{E}{3,4}&=&\rnode{F}{\ldots}\\
+\end{tabular}
+\end{center}
+\ncline[nodesepA=2mm,nodesepB=2mm]{->}{A}{D}
+\ncput*{$\div\ldots$}
+\ncline[nodesepA=2mm,nodesepB=2mm]{->}{B}{E}
+\ncput*{$\div\ldots$}
+\ncline[nodesepA=2mm,nodesepB=2mm]{->}{C}{F}
+\ncput*{$\div\ldots$}
+\item En utilisant pour chaque calcul un schéma de même type que le précédent, trouve parmi les produits suivants, ceux qui sont égaux :
+\[\Eqalign{
+A&=0,12\times3,4\kern5mm&B&=1,2\times3,4\kern5mm&C&=34\times0,12\kern5mm&D&=1,2\times34\kern5mm&E&=1,2\times0,34\cr
+F&=120\times0,34&G&=12\times0,34&H&=340\times0,12&I&=0,034\times12\cr
+}\]
+\end{myenumerate}

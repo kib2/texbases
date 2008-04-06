@@ -1,0 +1,23 @@
+%@Auteur: François Meria\par
+Parmi les demi-droites de la figure ci-contre, donner la
+bissectrice des angles suivants d'après le dessin.
+\begin{multicols}{2}
+\begin{center}
+\pspicture(5,4)
+    \pstGeonode[PointSymbol=none,PosAngle={235,0,45}](0,0){S}(5,0){x}(4,3.5){y}
+    \pstLineAB{S}{x} \pstLineAB{S}{y}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{y}{t}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{t}{S}{y}{m}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{m}{S}{y}{n}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{t}{p}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{p}{q}
+\endpspicture
+\end{center}
+\par\columnbreak\par
+    \begin{myenumerate}
+        \item $\widehat{xSy}$ : \dotfill
+        \item $\widehat{xSp}$ : \dotfill
+        \item $\widehat{tSy}$ : \dotfill
+        \item $\widehat{xSt}$ : \dotfill
+    \end{myenumerate}
+\end{multicols}

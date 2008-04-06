@@ -1,0 +1,26 @@
+input geometriesyr16;
+figure(0,0,8u,8u);
+pair O,A,B,C,D,E,F,G,H,I,J;
+O=u*(4,4);
+path cc,cd;
+cd=cercles(O,3u);
+E=pointarc(cd,100);
+H=symetrie(E,O);
+F=pointarc(cd,60);
+I=symetrie(F,O);
+trace polygone(E,F,H,I);
+G=pointarc(cd,20);
+J=symetrie(G,O);
+trace polygone(F,G,I,J);
+A=droite(J,F) intersectionpoint droite(E,I);
+C=symetrie(A,O);
+B=rotation(A,O,-90);
+D=symetrie(B,O);
+trace polygone(A,B,C,D);
+cc=cercles(O,A);
+marque_p:="plein";
+pointe(O);
+trace cc;
+trace cd;
+fin;
+end

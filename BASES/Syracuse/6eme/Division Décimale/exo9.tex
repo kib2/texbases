@@ -1,0 +1,33 @@
+%@Dif:2
+Recopie et complète le tableau suivant :
+\setbox1=\hbox{
+\begin{pspicture}(0.5,0.5)
+\put(0,0){\rnode{A}{}}
+\put(0.45,0.45){\rnode{B}{}}
+\ncarc{->}{A}{B}
+\rput(0.5,0.15){$\div$}
+\end{pspicture}
+}
+\[\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+\box1&0,1&0,01&0,001&10&100&1\,000\\
+\hline
+450&\phantom{0,001}&\phantom{0,001}&&\phantom{0,001}&\phantom{0,001}&\phantom{0,001}\\
+\hline
+8&&&&&&\\
+\hline
+34,6&&&&&&\\
+\hline
+0,2&&&&&&\\
+\hline
+280&&&&&&\\
+\hline
+16&&&&&&\\
+\hline
+71,3&&&&&&\\
+\hline
+0,42&&&&&&\\
+\hline
+\end{tabular}
+\]
+%@Commentaire: Application directe des règles de calculs par 10, 100, 1\,000,\ldots

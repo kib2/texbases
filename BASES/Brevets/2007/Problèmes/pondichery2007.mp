@@ -1,0 +1,43 @@
+input geometriesyr16;
+figure(0,0,6u,7u);
+pair A,B,C,D,E,F,G;
+A=u*(3,4);
+B-A=u*(-1,-2);
+C-A=u*(1,-1.5);
+E=4.5/3[A,C];
+D=4.5/3[A,B];
+F=7.05/3[C,A];
+G=7.05/3[B,A];
+trace droite(D,G);
+trace droite(E,F);
+trace droite(B,C);
+trace droite(D,E);
+marque_p:="croix";
+nomme.lrt(G);
+nomme.llft(F);
+marque_p:="non";
+nomme.rt(A);
+nomme.ulft(B);
+nomme.urt(C);
+nomme.llft(E);
+nomme.lrt(D);
+fin;
+input courbescp13;
+input TEX;
+figure(0,0,12.5u,16u);
+cadre((0,0),(12.5,16));
+trace grille(0.5) withcolor orange;
+origine((1,0.5));
+unites(1,0.5);
+trace axes;
+Legendex.ulft(btex Nombre de etex);
+Legendex.llft(btex DVD lou\'es etex);
+legendey(btex Prix en euros etex);
+for k=1 upto 9:
+  label.bot(TEX(""&decimal(k)&""),pp(k,0));
+endfor;
+for k=1 upto 29:
+  label.lft(TEX(""&decimal(k)&""),pp(0,k));
+endfor;
+fin;
+end

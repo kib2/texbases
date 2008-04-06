@@ -1,0 +1,27 @@
+%@P:exocorcp
+%@Auteur: IREM Strasbourg
+\par Un groupe de 12 personnes mange dans un restaurant. Le montant de l'addition est 141~\textgreek{\euro}.
+\begin{myenumerate}
+  \item Chaque personne devra-t-elle verser
+    \begin{itemize}
+    \item entre 5~\textgreek{\euro} et 10~\textgreek{\euro} ?
+    \item entre 10~\textgreek{\euro} et 20~\textgreek{\euro} ?
+    \item entre 20~\textgreek{\euro} et 30~\textgreek{\euro} ?
+    \end{itemize}
+  \item Calculer le montant exact de la somme versée par chaque personne.
+\end{myenumerate}
+%@Correction:
+\begin{myenumerate}
+  \item
+    \begin{multicols}{4}
+      \opmul[style=text]{12}{5}
+      \par
+      \opmul[style=text]{12}{10}
+      \par
+      \opmul[style=text]{12}{20}
+      \par
+      \opmul[style=text]{12}{30}
+    \end{multicols}
+Donc chaque personne doit verser entre 10 et 20~\textgreek{\euro}.
+\item\subitem{}\par\dispo{1}{\opdiv*{141}{12}{a}{b}\opdiv{141}{12}}{Donc chaque personne devra verser \opprint{a}~\textgreek{\euro}.}
+\end{myenumerate}

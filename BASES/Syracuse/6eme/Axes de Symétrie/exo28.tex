@@ -1,0 +1,25 @@
+%@Auteur: François Meria\par
+Compléter les phrases suivantes avec les mots proposés :\\
+
+\fbox{médiatrice} \hfill \fbox{axe de symétrie} \hfill
+\fbox{bissectrice} \hfill \fbox{angle}
+\begin{enumerate}[(a)]
+    \item La droite $(d)$ est l'\dotfill de l'\dotfill
+    $\widehat{HAK}$.
+    \item La droite $(d)$ est donc sa \dotfill
+    \item La droite $(d)$ est aussi la \dotfill du segment $[HK]$.
+\end{enumerate}
+\begin{center}
+\pspicture(5,5) \rput{25}{
+    \pstGeonode[PointSymbol=none,PosAngle={235,-60,60}](0,1){A}(4,-1){K}(4,3){H}
+    \pstLineAB{H}{K}
+    \pstMediatorAB[CodeFig=true,PointName=none,PointSymbol=none,nodesep=-1.5,CodeFigColor=black]{H}{K}{I}{M}
+    \pstLineAB[nodesepA=-1]{A}{I}
+    \pstLineAB[nodesepB=-1]{A}{H}
+    \pstMarkAngle[Mark=MarkHash,MarkAngleRadius=1]{I}{A}{H}{}
+    \pstLineAB[nodesepB=-1]{A}{K}
+    \pstMarkAngle[Mark=MarkHash,MarkAngleRadius=0.8]{K}{A}{I}{}
+    }
+    \put(5,3){$(d)$}
+\endpspicture
+\end{center}

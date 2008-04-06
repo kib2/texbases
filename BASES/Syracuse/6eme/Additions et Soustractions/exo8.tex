@@ -1,0 +1,17 @@
+%@P:exocorcp
+Le lundi, Obélix a livré 37 menhirs ; le mardi, il en a livré 7 de
+moins que lundi ; le mercredi, il en a livré 7 de moins que le mardi
+et ainsi de suite jusqu'au samedi où il en a livré 7 de moins que la
+veille.\par Combien Obélix a-t-il livré de menhirs sur sa semaine ?
+%@Correction:
+\opcopy{37}{a}
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+Jour&Lundi&Mardi&Mercredi&Jeudi&Vendredi&Samedi\\
+\hline
+Menhirs&\opprint{a}&\opsub*{a}{7}{b}\opsub[style=text]{a}{7}&\opsub*{b}{7}{c}\opsub[style=text]{b}{7}&\opsub*{c}{7}{d}\opsub[style=text]{c}{7}&\opsub*{d}{7}{e}\opsub[style=text]{d}{7}&\opsub*{e}{7}{f}\opsub[style=text]{e}{7}\\
+\hline
+\end{tabular}
+\end{center}
+\par Le total est donc de $\opprint{a}+\opprint{b}+\opprint{c}+\opprint{d}+\opprint{e}+\opprint{f}=\opadd*{a}{b}{A1}\opadd*{A1}{c}{A1}\opadd*{A1}{d}{A1}\opadd*{A1}{e}{A1}\opadd*{A1}{f}{A1}\opprint{A1}$ menhirs.

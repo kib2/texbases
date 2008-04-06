@@ -1,0 +1,21 @@
+input geometriesyr16;
+figure(0,0,7u,7u);
+pair O,A,B,C,D,E,F;
+O=u*(3.5,3.5);
+path cc;
+cc=cercles(O,2.5u);
+A=pointarc(cc,130);
+B=rotation(A,O,-60);
+C=rotation(B,O,-60);
+D=rotation(C,O,-60);
+E=rotation(D,O,-60);
+F=rotation(E,O,-60);
+trace polygone(A,B,C,D,E,F);
+nomme.ulft(A);
+nomme.top(B);
+nomme.urt(C);
+nomme.rt(D);
+nomme.bot(E);
+nomme.llft(F);
+fin;
+end

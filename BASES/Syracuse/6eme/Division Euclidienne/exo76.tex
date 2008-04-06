@@ -1,0 +1,31 @@
+%@Auteur:Véronique Glaçon\par
+ \renewcommand{\arraystretch}{4}
+ \newcommand\OPoval[3]{%
+    \dimen1=#2\opcolumnwidth
+    \ovalnode{#1}
+      {\kern\dimen1 #3\kern\dimen1}}
+Relie chaque problème à sa réponse entourée.   
+\par   
+\begin{tabular}{m{9cm} c m{1.5cm} c m{6cm}}
+  Louis a ramassé pendant une semaine $232$ oeufs. Il les range par boîtes de $18$ et fait une omelette avec le reste?
+  \par Combien son omelette contient d'oeufs?
+  & $\bullet$ & & $\bullet$ & 
+   \opidiv[voperator=bottom,displayintermediary=all,resultstyle.1=\OPoval{A}{0.6}]{232}{18} 
+  \\ 
+  Un fleuriste dispose de $232$ tulipes. 
+  \par Combien de bouquets de $18$ tulipes va-t-il pouvoir confectionner?
+  & $\bullet$ & & $\bullet$ &   
+  \opidiv[voperator=bottom,displayintermediary=all,remainderstyle.2.2=\OPoval{B}{0.6}]{232}{18}  
+  \\
+  La documentaliste du collège doit ranger $232$ livres et, sur chaque étagère, elle peut disposer $18$ livres.
+  \par Combien d'étagères va-t-elle utiliser au minimum?
+  & $\bullet$ & & $\bullet$ &   
+  \opidiv[voperator=bottom,displayintermediary=all=]{232}{18} $12+1=\ovalnode{C}{13}$   
+  \\
+  Un agriculteur doit ranger $232$ pommes dans des cagettes. Une cagette peut contenir $18$ pommes.
+  \par Combien de pommes lui manquera-t-il pour remplir la dernière cagette?
+  & $\bullet$ & & $\bullet$ & 
+  \opidiv[voperator=bottom,displayintermediary=all=]{232}{18} $18-16=\ovalnode{D}{2}$    
+  \\
+\end{tabular}
+\renewcommand{\arraystretch}{1}

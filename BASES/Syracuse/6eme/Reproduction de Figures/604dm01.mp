@@ -1,0 +1,48 @@
+input geometriesyr15;
+u:=0.8cm;
+figure(0,0,10u,5u);
+pair A,B,C,D,E;
+A=u*(1,2);
+B=u*(3,2);
+C=u*(5,2);
+D=u*(7,2);
+E=u*(9,2);
+trace droite(A,E);
+trace arccercle(C,A,B);
+trace arccercle(E,C,D);
+trace arccercle(A,B,iso(A,B));
+trace arccercle(C,B,iso(C,B));
+trace arccercle(D,C,iso(D,C));
+trace arccercle(D,E,iso(D,E));
+marque_p:="croix";
+nomme.llft(A);
+nomme.lrt(B);
+nomme.bot(C);
+nomme.llft(D);
+nomme.lrt(E);
+fin;
+u:=1cm;
+figure(0,0,8u,7.2u);
+pair A,B,C,D,E,F,G,H,I;
+trace papiercahier withcolor orange;
+A=placepoint(8,1);
+B=placepoint(3,6);
+C=placepoint(1,2);
+D=placepoint(2,2);
+E=placepoint(3,2);
+F=placepoint(4,2);
+G=placepoint(5,2);
+H=placepoint(6,2);
+I=placepoint(7,2);
+picture cc;
+cc=image(
+  trace arccercle(G,C,E);
+  trace arccercle(C,E,D);
+  trace arccercle(G,E,F);
+  trace arccercle(G,I,H);
+  );
+trace cc;
+trace symetrie(cc,A,B);
+fin;
+
+end

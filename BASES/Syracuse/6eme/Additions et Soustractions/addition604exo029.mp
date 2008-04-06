@@ -1,0 +1,57 @@
+input geometriesyr16;
+u:=8mm;
+figure(0,0,10u,10u);
+pair A,B,C,D,E,F,G,H,I,J,K,L;
+path cd;
+cd=cercles(u*(5,5),4u);
+A=pointarc(cd,30);
+B=pointarc(cd,90);
+C=pointarc(cd,150);
+D=pointarc(cd,210);
+E=pointarc(cd,270);
+F=pointarc(cd,330);
+G=segment(A,C) intersectionpoint segment(F,B);
+L=segment(A,E) intersectionpoint segment(F,B);
+H=segment(A,C) intersectionpoint segment(D,B);
+I=segment(E,C) intersectionpoint segment(D,B);
+J=segment(E,C) intersectionpoint segment(F,D);
+K=segment(A,E) intersectionpoint segment(F,D);
+trace polygone(A,C,E);
+trace polygone(B,D,F);
+path cc;
+cc=cercles(A,3mm);
+remplis cc withcolor jaune;
+trace cc;
+remplis (cc shifted(B-A)) withcolor jaune;
+trace cc shifted(B-A);
+remplis (cc shifted(C-A)) withcolor jaune;
+trace cc shifted(C-A);
+remplis (cc shifted(D-A)) withcolor jaune;
+trace cc shifted(D-A);
+remplis (cc shifted(E-A)) withcolor jaune;
+trace cc shifted(E-A);
+remplis (cc shifted(F-A)) withcolor jaune;
+trace cc shifted(F-A);
+remplis (cc shifted(G-A)) withcolor jaune;
+trace cc shifted(G-A);
+remplis (cc shifted(H-A)) withcolor jaune;
+trace cc shifted(H-A);
+remplis (cc shifted(I-A)) withcolor jaune;
+trace cc shifted(I-A);
+remplis (cc shifted(J-A)) withcolor jaune;
+trace cc shifted(J-A);
+remplis (cc shifted(K-A)) withcolor jaune;
+trace cc shifted(K-A);
+remplis (cc shifted(L-A)) withcolor jaune;
+trace cc shifted(L-A);
+label(btex 1 etex,C);
+label(btex 2 etex,B);
+label(btex 8 etex,H);
+label(btex 12 etex,G);
+label(btex 5 etex,A);
+label(btex 11 etex,E);
+fin;
+end
+
+
+

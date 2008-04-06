@@ -1,0 +1,19 @@
+%@P:exocorcp
+%@Dif:2
+\begin{myenumerate}
+\item Pose et effectue les opérations suivantes :
+\[234,56+546,7\kern2cm 56+769,3\]
+\item Effectue ensuite la somme des résultats obtenus.
+\end{myenumerate}
+%@Correction:
+\begin{multicols}{2}
+\begin{myenumerate}
+  \item\subitem{}\par\opadd*{234,56}{546,7}{a}\opadd*{56}{769,3}{b}
+\begin{center}
+\opadd{234,56}{546,7}\kern2cm\opadd{56}{769,3}
+\end{center}
+\columnbreak\par
+  \item\subitem{}\par\opadd{a}{b}
+\end{myenumerate}
+\end{multicols}
+%@Commentaire: Exercice facile, à donner en interrogation ou en devoir surveillé.

@@ -1,0 +1,13 @@
+%@P:exocorcp
+%@Dif:2
+Un camion pèse à vide 1,250 tonne. Il transporte 9 caisses qui
+contiennent chacune 150 boîtes. Une boîte pèse 0,8~kg. Ce camion
+peut-il s'engager sur une route où la masse est limitée à 2 tonnes ?
+%@Correction:
+\begin{multicols}{4}
+\opmul*{150}{0,8}{a}\opunzero{a}\opmul{150}{0,8}\par 1 caisse pèse \opprint{a}~kg.\columnbreak
+\par\opmul*{a}{9}{b}\opunzero{b}\opmul{a}{9}\par Le chargement du camion pèse \opprint{b}~kg.\columnbreak
+\par \opadd*{b}{1250}{c}\opunzero{c}\opadd{b}{1250}\par La masse totale du camion est \opprint{c}~kg.\columnbreak
+\par Donc le camion ne peut s'engager sur cette route.
+\end{multicols}
+%@Commentaire: On insiste sur le sens des opérations.

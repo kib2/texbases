@@ -1,0 +1,63 @@
+%@Titre:Déterminer le jour précis d'une date du \sc{XXI}\ieme\ siècle.
+Pour cela, on applique la méthode suivante :
+\columnseprule0.4pt
+\begin{multicols}{2}
+\begin{itemize}
+\item on calcule $a$ qui est égal à la somme de 100 et du nombre
+  constitué par les deux derniers chiffres de l'année;
+\item on calcule $b$ qui est le quotient de la division euclidienne de
+  $a$ par 4;
+\item $c$ est le numéro du jour cherché;
+\item $d$ est le numéro du mois, donné par le tableau suivant :\par
+\vspace{2mm}
+\begin{center}
+  \begin{tabular}{|l|c|}
+    \hline
+    \multicolumn{1}{|c|}{Mois}&\no\\
+    \hline
+    Janvier; Octobre&0\\
+    \hline
+    Mai&1\\
+    \hline
+    Août&2\\
+    \hline
+    Février, Mars, Novembre&3\\
+    \hline
+    Juin&4\\
+    \hline
+    Septembre, Décembre&5\\
+    \hline
+    Avril, Juillet&6\\
+    \hline
+  \end{tabular}
+\end{center}
+\vspace{2mm}
+\item on calcule $e=a+b+c+d$;
+\item enfin on calcule $f$ qui est le reste de la division euclidienne de $e$ par 7.
+\item Si $f=0$ alors c'est un dimanche; si $f=1$, c'est un lundi; si
+  $f=2$, c'est un mardi;\ldots
+\end{itemize}
+\par\columnbreak\par
+Par exemple, cherchons le jour du 14 Juillet 2050 :
+\begin{itemize}
+\item[$\star$] $a=100+50=150$;
+\item[$\star$] \opidiv[style=text]{150}{4} donc $b=37$;
+  \begin{center}
+    \opidiv{150}{4}
+  \end{center}
+\item[$\star$] $c=14$;
+\item[$\star$] $d=6$;
+\item[$\star$] $e=150+37+14+6=207$.
+\item[$\star$] Comme \opidiv[style=text]{207}{7} alors $f=4$.
+  \begin{center}
+    \opidiv{207}{7}
+  \end{center}
+\end{itemize}
+Le 14 Juillet 2050 sera {\em un jeudi} !
+\end{multicols}
+\columnseprule0pt
+\begin{myenumerate}
+  \item Quel sera le jour du solstice d'été 2030, c'est-à-dire le 21
+    Juin 2030 ?
+  \item Quel sera le jour où tu auras 50 ans ?
+\end{myenumerate}

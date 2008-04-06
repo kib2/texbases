@@ -1,0 +1,27 @@
+input geometriesyr16;
+figure(0,0,7.5u,4u);
+trace grille(0.5);
+pair M,N,L,S;
+S=placepoint(3,2);
+N=placepoint(11,1);
+L=placepoint(4,5);
+M=placepoint(7,7);
+marque_p:="croix";
+nomme.ulft(S);
+nomme.ulft(L);
+nomme.lrt(N);
+nomme.urt(M);
+marque_p:="non";
+fin;
+figuremainlevee(0,0,6u,5u);
+pair T,R,I;
+R=u*(0.75,0.75);
+I=u*(4.25,0.75);
+T=u*(0.75,3.25);
+trace triangle(T,R,I);
+trace codeperp(T,R,I,8);
+nomme.llft(R);
+nomme.ulft(T);
+nomme.lrt(I);
+finmainlevee;
+end

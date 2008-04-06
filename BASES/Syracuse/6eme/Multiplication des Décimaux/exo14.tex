@@ -1,0 +1,13 @@
+%@P:exocorcp
+%@Dif:3
+Une classe désire commander 35 manuels d'anglais et 35 de
+géographie. Sachant qu'un livre de géographie coûte
+10,50~\textgreek{\euro} et qu'un livre d'anglais coûte
+7,50~\textgreek{\euro}, quel est le montant de cette commande ?
+%@Correction:
+\opmul*{35}{10,50}{a}\opmul[style=text]{35}{10,50}~\textgreek{\euro}
+pour 35 livres de géographie.
+\par\opmul*{35}{7,50}{b}\opmul[style=text]{35}{7,50}~\textgreek{\euro}
+pour 35 livres d'anglais.
+\par Le montant total de la commande est
+\opadd[style=text]{a}{b}~\textgreek{\euro}.

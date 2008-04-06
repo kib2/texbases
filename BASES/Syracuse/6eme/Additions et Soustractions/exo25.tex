@@ -1,0 +1,42 @@
+%@P:exocorcp
+%@Dif:3
+\par\dispo{1}{\begin{tabular}{|c|c|}
+\hline
+Protéines&7~g\\
+\hline
+Glucides&50~g\\
+\hline
+Lipides&0,8~g\\
+\hline
+Fibres&2,7~g\\
+\hline
+Sodium&0,5~mg\\
+\hline
+Potassium&0,1~mg\\
+\hline
+Vitamine B&0,62~mg\\
+\hline
+Magnésium&0,3~mg\\
+\hline
+\end{tabular}
+}{Pour 100~g de pain blanc, la composition est celle donnée dans le
+  tableau ci-contre.\\Dans ce tableau, on a tout mentionné sauf un
+  élément pourtant essentiel : l'eau.\\Quelle est la quantité d'eau
+  contenue dans 100~g de pain ?
+}
+%@Correction:
+\begin{multicols}{2}
+  \begin{description}
+  \item[Sodium] $0,5~\mbox{mg}=0,0005~\mbox{g}$.
+  \item[Potassium] $0,1~\mbox{mg}=0,0001~\mbox{g}$.
+  \item[Vitamine B] $0,62~\mbox{mg}=0,0062~\mbox{g}$.
+  \item[Magnésium] $0,3~\mbox{mg}=0,0003~\mbox{g}$.
+  \end{description}
+\end{multicols}
+\begin{center}
+\opadd*{7}{50}a\opadd*{a}{0,8}b\opadd*{b}{2,7}c\opadd*{c}{0,0005}d\opadd*{d}{0,0001}e\opadd*{e}{0,0062}f\opadd*{f}{0,0003}g
+\opadd{7}{50}\kern2cm\opadd{a}{0,8}\kern2cm\opadd{b}{2,7}\kern2cm\opadd{c}{0,0005}\par
+\opadd{d}{0,0001}\kern2cm\opadd{e}{0,0062}\kern2cm\opadd{f}{0,0003}
+\end{center}
+\opsub*{100}{g}{h}\opsub[carrysub]{100}{g}\kern2cm Dans 100~g de pain, il y a \opprint{h}~g d'eau.
+%@Commentaire: Attention aux conversions.

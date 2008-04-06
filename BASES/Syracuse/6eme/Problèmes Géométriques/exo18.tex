@@ -1,0 +1,41 @@
+%@Auteur: François Meria\par
+\begin{myenumerate}
+    \item
+    \begin{multicols}{2}
+    \begin{center}
+    \pspicture(5,4.5)
+        \pstGeonode[PointSymbol=+,PosAngle={225,-45,-45}](0.5,0.5){A}(4.5,0.5){B}(2.5,0.5){D}
+        \pcline{<->}(0.5,0)(2.5,0) \lput*{:U}{4~cm}
+        \pstSegmentMark[SegmentSymbol=pstslashh]{A}{D}
+        \pstSegmentMark[SegmentSymbol=pstslashh]{D}{B}
+        \pstRotation[RotAngle=70,PointSymbol=+,PosAngle=160]{A}{D}{C}
+        \pstSegmentMark[SegmentSymbol=pstslashh]{A}{C}
+        \pstRotation[RotAngle=70,PointSymbol=+,PosAngle=90]{A}{B}{E}
+        \pstSegmentMark[SegmentSymbol=pstslashh]{C}{E}
+        \pstLineAB[linestyle=dashed]{C}{D}
+        \pstLineAB[linestyle=dashed]{B}{E}
+        \pstMarkAngle[arrows=->,MarkAngleRadius=0.7]{D}{A}{C}{}
+        \put(1.2,1){$70^{\degres}$}
+\endpspicture
+    \end{center}
+\begin{enumerate}[(a)]
+        \item Construire la figure ci-contre en vraies grandeurs.
+        \item Placer sur la figure construite le point $I$, milieu
+        du segment $[CD]$, puis coder la figure.
+        \item Placer sur la figure construite le point $J$, milieu
+        du segment $[BE]$, puis coder la figure.
+        \item Tracer la droite $(IJ)$.
+    \end{enumerate}
+\end{multicols}
+    \item
+        \begin{enumerate}
+            \item Que peut-on dire des longueurs des segments $[AC]$
+            et $[AD]$ ? Justifier.
+            \item Que peut-on dire des longueurs $CI$ et $ID$ ? Justifier.
+            \item En déduire que la droite $(AI)$ est la médiatrice du segment $[CD]$.
+        \end{enumerate}
+    \item En utilisant la question précédente, que peut-on dire de
+    la droite $(AJ)$ par rapport au segment $[BE]$ ?
+    \item Sur la figure précédente, coder les angles
+    $\widehat{BAJ}$ et $\widehat{EAJ}$, puis mesurer ces angles.
+\end{myenumerate}

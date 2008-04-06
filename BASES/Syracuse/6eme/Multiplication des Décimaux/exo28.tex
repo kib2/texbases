@@ -1,0 +1,27 @@
+%@P:exocorcp
+%@Dif:2
+Un fermier élève 20 vaches qui lui donnent chacune en moyenne 16
+litres de lait par jour. Un litre de lait fournissant 40~g de beurre,
+combien obtiendra-t-il de beurre dans un mois de 30 jours ?
+%@Correction:
+  \begin{tabularx}{6cm}{X|X}
+\multicolumn{2}{c}{{\bf En 1 jour}}\\
+\hline
+\opmul*{20}{16}{a}\opmul{20}{16}&\opmul*{a}{40}{b}\opmul{a}{40}\\
+ Les vaches fournissent \opprint{a}~L de lait.&Le fermier obtient \opprint{b}~g de beurre.\\
+  \end{tabularx}
+\kern2cm
+\begin{tabular}{c|c|c}
+Nombre de jours&\rnode{A}{1}&\rnode{B}{30}\\
+\hline
+Masse de beurre (g)&\rnode{C}{\opprint{b}}&\rnode{D}{\opmul[style=text]{b}{30}}\\
+\multicolumn{3}{c}{}\\
+\multicolumn{3}{c}{}\\
+\multicolumn{3}{c}{}\\
+\multicolumn{3}{c}{Le fermier obtient 384~kg de beurre.}\\
+\end{tabular}
+\ncarc[offset=2mm,arcangle=30]{->}{A}{B}
+\naput{$\times 30$}
+\ncarc[offset=-3mm,arcangle=-30]{->}{C}{D}
+\nbput{$\times30$}
+%@Commentaire: Uniquement des multiplications comme opération avec un peu de proportionnalité.

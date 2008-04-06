@@ -1,0 +1,43 @@
+%@P:exocorcp
+%@Dif:3
+Reproduis et complète le tableau suivant :
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+\hline
+$a$&$b$&$a\times b$&Troncature à l'unité de $a\times b$\\
+\hline
+1,2&1,2&&\\
+\hline
+4,5&1,3&&\\
+\hline
+1,5&4,2&&\\
+\hline
+2,7&2,4&&\\
+\hline
+3,1&6,9&&\\
+\hline
+  \end{tabular}
+\end{center}
+%@Correction:
+\begin{center}
+  \begin{tabular}{|c|c|c|c|}
+\hline
+$a$&$b$&$a\times b$&Arrondi à l'unité de $a\times b$\\
+\hline
+\opcopy{1.2}{a}\opprint{a}&\opcopy{1.2}{b}\opprint{b}&\opmul[style=text]{a}{b}\opmul*{a}{b}{c}&\opround{c}{0}{c}\opprint{c}\\
+\hline
+\opcopy{4.5}{a}\opprint{a}&\opcopy{1.3}{b}\opprint{b}&\opmul[style=text]{a}{b}\opmul*{a}{b}{c}&\opround{c}{0}{c}\opprint{c}\\
+\hline
+\opcopy{1.5}{a}\opprint{a}&\opcopy{4.2}{b}\opprint{b}&\opmul[style=text]{a}{b}\opmul*{a}{b}{c}&\opround{c}{0}{c}\opprint{c}\\
+\hline
+\opcopy{2.7}{a}\opprint{a}&\opcopy{2.4}{b}\opprint{b}&\opmul[style=text]{a}{b}\opmul*{a}{b}{c}&\opround{c}{0}{c}\opprint{c}\\
+\hline
+\opcopy{3.1}{a}\opprint{a}&\opcopy{6.9}{b}\opprint{b}&\opmul[style=text]{a}{b}\opmul*{a}{b}{c}&\opround{c}{0}{c}\opprint{c}\\
+\hline
+  \end{tabular}
+\end{center}
+\opcopy{1.2}{a}\opcopy{1.2}{b}\opmul{a}{b}\kern1cm
+\opcopy{4.5}{a}\opcopy{1.3}{b}\opmul{a}{b}\kern1cm
+\opcopy{1.5}{a}\opcopy{4.2}{b}\opmul{a}{b}\kern1cm
+\opcopy{2.7}{a}\opcopy{2.4}{b}\opmul{a}{b}\kern1cm
+\opcopy{3.1}{a}\opcopy{6.9}{b}\opmul{a}{b}

@@ -1,0 +1,76 @@
+%@Auteur: François Meria\par
+\begin{center}
+\psset{unit=0.75cm}
+  \pspicture(-2.5,-1)(12,16)
+    \psframe(-3,-1.4)(12,16)
+    \pstGeonode[PointSymbol=none,PosAngle={225,-45,90,90,-45,225}](0,0){A}(9,0){B}(9,9){C}(0,9){D}(11,9){E}(-2,9){F}
+    \pstGeonode[PointSymbol=none,PosAngle={45,135,45,135}](4,0){J}(6,0){K}(6,3){H}(4,3){I}
+    \pstGeonode[PointSymbol=none,PointName=none](6,9){T}(2,9){T'}(7,0){K'}(7,9){C'}(0,1.5){H'}(11,13){Z_1}(9,13){Z_2}
+    % Points définis par des intersection ou des transformations
+    \pstInterCC[PointNameB=none,PointSymbol=none,PosAngleA=90]{F}{T}{E}{T'}{G}{M_2}
+    \pstInterLL[PosAngle=225,PointSymbol=none]{E}{G}{K}{T}{L}
+    \pstInterLL[PosAngle=10,PointSymbol=none]{E}{G}{K'}{C'}{M}
+    % Points servant à la construction (cachés)
+    \pstTranslation[PosAngle=135,PointSymbol=none]{A}{H'}{L}{P}
+    \pstTranslation[PosAngle=45,PointSymbol=none]{T}{C'}{P}{N}
+    % segments utiles
+    \pstSegmentMark[SegmentSymbol=pstslashh]{A}{D}
+    \pstSegmentMark[SegmentSymbol=pstslashh]{B}{C}
+    \pstLineAB{A}{J}
+    \pstLineAB{J}{K}
+    \pstSegmentMark[SegmentSymbol=pstslash]{K}{B}
+    \pstLineAB{D}{C}
+    \pstSegmentMark[SegmentSymbol=pstslashhh]{F}{D}
+    \pstSegmentMark[SegmentSymbol=pstslashhh]{C}{E}
+    \pstLineAB{I}{H}
+    \pstSegmentMark[SegmentSymbol=pstslash]{H}{K}
+    \pstSegmentMark[SegmentSymbol=pstslash]{I}{J}
+    \pstLineAB{F}{G}
+    \pstLineAB{E}{G}
+    \pstLineAB{P}{N}
+    \pstLineAB{N}{M}
+    \pstLineAB{L}{P}
+    %codages
+    \psline[linestyle=dashed](0,0)(0,-1)
+    \psline[linestyle=dashed](4,0)(4,-0.75)
+    \psline[linestyle=dashed](6,0)(6,-0.75)
+    \psline[linestyle=dashed](9,0)(9,-0.75)
+    \psline[linestyle=dashed](11,13.5)(11,8.3)
+    \psline[linestyle=dashed](0,0)(-0.75,0)
+    \pcline{<->}(0,-0.5)(4,-0.5) \lput*{:U}{4~cm}
+    \pcline{<->}(4,-0.5)(6,-0.5) \lput*{:U}{2~cm}
+    \pcline{<->}(6,-0.5)(9,-0.5) \lput*{:U}{3~cm}
+    \pcline{<->}(0,-0.5)(4,-0.5) \lput*{:U}{4~cm}
+    \pcline{<->}(7,13)(11,13) \lput*{:U}{4~cm}
+    \pcline{<->}(-2.7,9.45)(3.1,14.85) \mput*{8~cm}
+    \pcline{<->}(9,8.35)(11,8.35) \mput*{2~cm}
+    \pcline{<->}(-0.95,0)(-0.95,9) \mput*{9~cm}
+    \pstRightAngle[RightAngleSize=0.2]{D}{A}{B}
+    \pstRightAngle[RightAngleSize=0.2]{A}{D}{C}
+    \pstRightAngle[RightAngleSize=0.2]{A}{B}{C}
+    \pstRightAngle[RightAngleSize=0.2]{I}{J}{A}
+    \pstRightAngle[RightAngleSize=0.2]{H}{K}{B}
+    \pstRightAngle[RightAngleSize=0.15]{L}{P}{N}
+    \pstRightAngle[RightAngleSize=0.15]{P}{N}{M}
+    \pstRightAngle[RightAngleSize=0.15]{C}{E}{Z_1}
+    \pstRightAngle[RightAngleSize=0.15]{E}{Z_1}{Z_2}
+    \put(-2,14){$\begin{array}{l} GE=9~ \text{cm} \\PL=1,5~\text{cm} \\ PN=1~\text{cm}\end{array}$}
+    % Label "maison des mathématiques"
+    \psset{linestyle=none}
+    \pstextpath[c]{\psarcn(6.7,7){1.25}{180}{0}}{La Maison des}
+    \pstextpath[c]{\psarc(6.7,7){1.25}{180}{0}}{Mathématiques}
+  \endpspicture
+\end{center}
+
+\vskip 1cm
+
+\centerline{\textbf{CONSIGNES}}
+
+\vskip 1cm
+\begin{myenumerate}
+    \item Rédiger ce devoir sur une feuille double.
+    \item Coller la feuille d'énoncé sur la première page de la
+    feuille double.
+    \item Reproduire la figure ci-dessus en vraies grandeurs et en
+    codant les éléments identiques.
+\end{myenumerate}

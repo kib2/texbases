@@ -1,0 +1,31 @@
+input geometriesyr16;
+figure(0,0,6u,5u);
+  pair P,I;
+  P=u*(1,4);
+  I=u*(4.5,1.25);
+  path cc,dd;
+  cc=u*(0.8,0)..u*(0.6,1)..u*(0.2,1.5)..u*(0.9,2)..P..u*(2,4.5)..u*(3,3.9)..u*(4,4.5)..u*(5,5);
+  dd=perpendiculaire(I,P,iso(I,P));
+  remplis buildcycle(feuillet,cc,feuillet) withcolor gris;
+  remplis buildcycle(cc,feuillet) withcolor ciel;
+  trace feuillet;
+  trace cc;
+  marque_p:="croix";
+  nomme.ulft(P);
+  nomme.lrt(I);
+  marque_p:="non";
+  fin;
+figure(0,0,6u,5u);
+  remplis buildcycle(feuillet,cc,feuillet) withcolor gris;
+  remplis buildcycle(cc,feuillet) withcolor ciel;
+  remplis cercles(I,1/2[I,P]) withcolor rouge;
+  remplis buildcycle(dd,reverse(cc),feuillet) withcolor vert;
+  trace feuillet;
+  trace cc;
+  marque_p:="croix";
+  nomme.ulft(P);
+  nomme.lrt(I);
+  marque_p:="non";
+  fin;
+ end
+  

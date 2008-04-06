@@ -1,0 +1,46 @@
+%@Fichier: multirow.
+%@Dif:2
+Voici un tableau qui donne différentes informations sur des cassettes vidéo.
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+\hline
+Type de cassettes&Marque&Modèle&Durée&Prix\\
+\hline
+\multirow{4}{2cm}{\centerline{VHS-C}}&JVC&1&30 min&14~\textgreek{\euro}\\
+\cline{3-5}
+&Par lot de 3&2&45 min&18~\textgreek{\euro}\\
+\cline{2-5}
+&TDK&\multirow{2}{2cm}{\centerline{3}}&\multirow{2}{2cm}{\centerline{45 min}}&\multirow{2}{2cm}{\centerline{25~\textgreek{\euro}}}\\
+&Par lot de 3&&&\\
+\hline
+\multirow{2}{3cm}{\centerline{S-VHS-C}}&PANASONIC&\multirow{2}{2cm}{\centerline{4}}&\multirow{2}{2cm}{\centerline{45 min}}&\multirow{2}{2cm}{\centerline{29~\textgreek{\euro}}}\\
+&Par lot de 3&&&\\
+\hline
+\multirow{4}{3cm}{\centerline{8 MM}}&SONY&5&60 min&18~\textgreek{\euro}\\
+\cline{3-5}
+&Par lot de 3&6&90 min&27~\textgreek{\euro}\\
+\cline{2-5}
+&TDK&7&60 min&12,50~\textgreek{\euro}\\
+\cline{3-5}
+&Par lot de 2&8&90 min&14~\textgreek{\euro}\\
+\hline
+\multirow{4}{3cm}{\centerline{HI-8}}&SONY&9&60 min&25,5~\textgreek{\euro}\\
+\cline{3-5}
+&Par lot de 2&10&90 min&30~\textgreek{\euro}\\
+\cline{2-5}
+&TDK&11&60 min&16,50~\textgreek{\euro}\\
+\cline{3-5}
+&Par lot de 2&12&90 min&24,90~\textgreek{\euro}\\
+\hline
+  \end{tabular}
+\end{center}
+\begin{myenumerate}
+\item Quelle est la durée du modèle 6 ? Quel est le prix d'une
+cassette de ce modèle ?
+\item Séverine a acheté trois cassettes de 30 minutes. Quelle est le
+type de ces cassettes ? Combien a-t-elle payé ?
+\item Sébastien veut acheter des cassettes de 90 minutes. Quels
+modèles peut-il acheter ? Quel est le moins cher ?
+\item Claire doit acheter des cassettes de 60 minutes dans le type 8
+MM. Quel modèle doit-elle choisir ?
+\end{myenumerate}

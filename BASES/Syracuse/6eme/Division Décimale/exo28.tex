@@ -1,0 +1,23 @@
+%@P:exocorcp
+%@Auteur: IREM Strasbourg
+\par Un morceau de bois mesure 7~m de long. On le découpe en 8 morceaux de longueurs égales.
+\begin{myenumerate}
+  \item La longueur de chaque morceau sera-t-elle
+    \begin{itemize}
+    \item supérieure à 1~m ?
+    \item entre 0,8~m et 0,9~m ?
+    \item entre 0,9~m et 1~m ?
+    \end{itemize}
+  \item Calculer la longueur exacte de chaque morceau.
+\end{myenumerate}
+%@Correction:
+\begin{myenumerate}
+  \item
+    \begin{multicols}{3}
+      \opmul[style=text]{8}{0.8}
+      \par\opmul[style=text]{8}{0.9}
+      \par\opmul[style=text]{8}{1}
+    \end{multicols}
+Donc la longueur de chaque morceau de bois sera comprise entre 0,8~m et 0,9~m.
+\item\subitem{}\par\dispo{1}{\opdiv*{7}{8}{a}{b}\opdiv{7}{8}}{La longueur de chaque morceau de bois sera \opprint{a}~m.}
+\end{myenumerate}

@@ -1,0 +1,22 @@
+input geometriesyr16;
+figure(0,0,16u,7.5u);
+pair A,B,C,D;
+A=u*(6,6.8);
+B=u*(10.7,6.2);
+C=u*(7.2,3.8);
+D=u*(10.6,4.2);
+trace droite(u*(2.8,7.5),u*(6.2,1.5));
+label.llft(btex $(d_1)$ etex,u*(2.8,7.5));
+trace droite(u*(13,7.5),u*(10.5,2.8));
+label.lrt(btex $(d_2)$ etex,u*(13,7.5));
+trace droite(u*(0,6.6),u*(4.7,4));
+label.urt(btex $(d_3)$ etex,u*(0,6.6));
+trace droite(u*(6.2,1.5),u*(16,4.5));
+label.ulft(btex $(d_4)$ etex,u*(16,4.5));
+marque_p:="croix";
+nomme.top(A);
+nomme.top(B);
+nomme.top(C);
+nomme.top(D);
+fin;
+end

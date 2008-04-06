@@ -1,0 +1,49 @@
+%@Dif:3
+On donne le critère de divisibilité par 13 :
+\begin{center}
+\psshadowbox{\begin{minipage}{0.75\linewidth}
+\begin{itemize}
+\item On barre le chiffre des unités et on ajoute son quadruple au
+ nombre restant. 
+\item Le nouveau nombre obtenu est-il un multiple de 13 ? 
+\item Si oui, alors le nombre initial l'est aussi. 
+\item Si non, alors le nombre initial ne l'est pas non plus. 
+\item Si on ne sait pas conclure, on recommence avec ce nombre ce que
+ l'on a fait précédemment. 
+\end{itemize}
+\end{minipage}
+}
+\end{center}
+{\em Est-ce que 451\,487 et 370\,395 sont divisibles par 13 ?} 
+\begin{center}
+\opadd[voperator=bottom,operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.2=\rnode{A}{},resultstyle.1=\white]{451487}{280}
+\kern1cm
+\opadd[voperator=bottom,operandstyle.1.5=\rnode{B}{},operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.2=\rnode{C}{},resultstyle.1=\white]{45176}{240}
+\kern1cm
+\opadd[voperator=bottom,operandstyle.1.4=\rnode{D}{},operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.2=\rnode{E}{},resultstyle.1=\white]{4541}{40}
+\kern1cm
+\opadd[voperator=bottom,operandstyle.1.3=\rnode{F}{},operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.1=\white]{458}{320}
+\end{center}
+\ncarc[nodesepA=3mm]{->}{A}{B}
+\ncarc[nodesepA=3mm]{->}{C}{D}
+\ncarc[nodesepA=3mm]{->}{E}{F}
+Comme 77 n'est pas un multiple de 13 alors 451\,487 non plus.
+\begin{center}
+\opadd[voperator=bottom,operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.2=\rnode{A}{},resultstyle.1=\white]{370395}{200}
+\kern1cm
+\opadd[voperator=bottom,operandstyle.1.5=\rnode{B}{},operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.2=\rnode{C}{},resultstyle.1=\white]{37059}{360}
+\kern1cm
+\opadd[voperator=bottom,operandstyle.1.4=\rnode{D}{},operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.2=\rnode{E}{},resultstyle.1=\white]{3741}{40}
+\kern1cm
+\opadd[voperator=bottom,operandstyle.1.3=\rnode{F}{},operandstyle.1.1=\gray,operandstyle.2.1=\white,resultstyle.1=\white]{377}{280}
+\end{center}
+\ncarc[nodesepA=3mm]{->}{A}{B}
+\ncarc[nodesepA=3mm]{->}{C}{D}
+\ncarc[nodesepA=3mm]{->}{E}{F}
+Comme 65 est un multiple de 13 ($65=13\times5$) alors 370\,395 est un
+multiple de 13. 
+\par\vspace{5mm}\par\ding{46}{\em \`A ton tour} : les nombres suivants
+sont-ils des multiples de 13 ? 
+\begin{multicols}{4}
+47\,073\par137\,851\par685\,489\par68\,164\par130\,120\par22\,502\par34\,293\par322\,496
+\end{multicols}

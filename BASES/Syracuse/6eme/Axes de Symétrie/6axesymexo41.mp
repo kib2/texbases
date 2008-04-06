@@ -1,0 +1,30 @@
+input geometriesyr16;
+
+marque_r:=5;
+u:=8mm;
+figure(0,0,10u,10u);
+pair A,B,C,D,E,F,O;
+O=u*(5,5);
+path cc;
+cc=cercles(O,4u);
+A=pointarc(cc,210);
+B=cercles(A,6u) intersectionpoint cc;
+C=pointarc(cc,0);
+D=cercles(C,4u) intersectionpoint cc;
+E=pointarc(cc,-30);
+F=reverse(cercles(E,3u)) intersectionpoint reverse(cc);
+trace segment(A,B);
+trace marquesegment(A,B);
+trace segment(C,D);
+trace marquesegment(C,D);
+trace segment(E,F);
+trace marquesegment(E,F);
+nomme.llft(A);
+nomme.top(B);
+nomme.lrt(C);
+nomme.top(D);
+nomme.lrt(E);
+nomme.lrt(F);
+trace cc dashed evenly;
+fin;
+end

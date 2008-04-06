@@ -1,0 +1,20 @@
+input geometriesyr16;
+figure(0,0,11u,8.5u);
+pair A,B,C,D;
+A=u*(1,6);
+B=pointarc(cercles(A,3u),30);
+D=6/3[A,rotation(B,A,-90)];
+C=perpendiculaire(A,D,D) intersectionpoint cercles(D,7.5u);
+trace polygone(A,B,C,D);
+trace droite(A,B) dashed evenly;
+trace droite(D,C) dashed evenly;
+trace droite(A,D) dashed evenly;
+trace codeperp(B,A,D,8);
+trace codeperp(C,D,A,8);
+marque_p:="croix";
+nomme.bot(A);
+nomme.bot(D);
+nomme.top(B);
+nomme.lrt(C);
+fin;
+end

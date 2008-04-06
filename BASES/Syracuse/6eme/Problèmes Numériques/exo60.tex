@@ -1,0 +1,35 @@
+%@P:exocorcp
+%@Dif:2
+\begin{myenumerate}
+\item Pose et effectue les calculs suivants
+\[\Eqalign{
+\bullet&317,1+419,6=\kern3cm&\bullet&249,5\times3=\cr
+\cr
+\bullet&989,4-253,1=&\bullet&1344\div7=\cr
+}\]
+\item Pour chaque résultat, on donnera l'arrondi à l'unité et la
+troncature à l'unité.
+\end{myenumerate}
+%@Correction:
+\begin{myenumerate}
+  \item\subitem{}\par
+\opadd*{317,1}{419,6}{a}\opsub*{989,4}{253,1}{b}\opmul*{249,5}{3}{c}\opdiv*{1344}{7}{d}{e}
+\opadd{317,1}{419,6}\kern2cm\opsub{989,4}{253,1}\kern2cm\opmul{249,5}{3}\kern2cm\opdiv{1344}{7}
+\item\subitem{}\par
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+\hline
+Nombre&Arrondi à l'unité&Troncature à l'unité\\
+\hline
+\opprint{a}&\opround{a}{0}{a}\opprint{a}&736\\
+\hline
+\opprint{b}&\opround{b}{0}{b}\opprint{b}&736\\
+\hline
+\opprint{c}&\opround{c}{0}{c}\opprint{c}&749\\
+\hline
+\opprint{d}&\opround{d}{0}{d}\opprint{d}&192\\
+\hline
+    \end{tabular}
+  \end{center}
+\end{myenumerate}
+%@Commentaire: Révision sur les opérations de l'école primaire. Travail sur la numération.

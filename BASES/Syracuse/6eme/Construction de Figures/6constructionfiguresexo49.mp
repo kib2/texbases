@@ -1,0 +1,34 @@
+input geometriesyr16;
+
+figure(0u,0u,20u,27u);
+pair A,B,C,D,E,F,G,H,M,N,P,Q,R,S;
+marque_p:="croix";
+A=u*(3.6,8.1);
+B=u*(9.9,8.1);
+C=u*(4.7,4);
+D=u*(8.4,4);
+E=u*(2.5,8);
+F=u*(10.8,8);
+G=u*(3.1,7);
+H=u*(10.2,7);
+M=u*(5.3,8.7);
+N=u*(7.2,13.9);
+P=u*(10.9,11.7);
+Q=u*(14.1,10.3);
+R=u*(9.1,14.4);
+S=u*(17,25);
+nomme.top(A);
+nomme.ulft(B);
+nomme.urt(C);
+nomme.urt(D);
+nomme.ulft(E);
+nomme.top(F);
+nomme.llft(G);
+nomme.lrt(H);
+nomme.top(M);
+nomme.bot(N);
+nomme.lft(P);
+nomme.lrt(Q);
+nomme.ulft(R);
+fin;
+end

@@ -24,6 +24,19 @@ Lancer la commande suivante :
 Changelog:
 ==========
 
+06.04.2008 : - Un gros travail a été réalisé sur les bases d'exos.
+               En fait, j'ai réussi à récupérer entièrement la base
+               Collège de Syracuse à l'aide d'un script que j'ai écrit.
+               Je ne la donne pas ici entièrement, faute de place.
+               
+             - Possibilité de sauvegarder les modifications faites
+               au fichier en cours d'édition. Ajout du bouton 'Sauvegarder'.
+               
+             - Ajout de la propriété 'TreeFold' dans le fichier de config
+               qui peut prendre les valeurs 0 ou 1. Si elle est fixée à 1,
+               l'arbre des documents sera entièrement déplié, et ne le sera
+               pas sinon.
+
 05.04.2008 : - Renommage massif de fonctions et réorganisation du code.
             
              - Ajout d'un dialogue 'A propos", même s'il n'est pas encore 

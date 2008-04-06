@@ -1,0 +1,32 @@
+%@P:exocorcp
+%@Dif:2
+Antoine veut s'offrir un lecteur de CD qui coûte 110~\textgreek{\euro}
+et un CD de son chanteur préféré. Ce CD vaut
+18,75~\textgreek{\euro}. Antoine réunit ses économies et constate
+qu'elles se montent à 53,35~\textgreek{\euro}. Son père participe à son
+achat en lui donnant 15~\textgreek{\euro}.
+\\Antoine envisage alors de retirer l'argent qui lui manque de son
+livret de Caisse d'Epargne. Sur ce livret, il dispose de
+191,73~\textgreek{\euro}.
+\begin{myenumerate}
+\item Quelle somme Antoine doit-il retirer de son livret de Caisse
+  d'Epargne ?
+\item Quel montant lui restera-t-il alors sur son livret ?
+\end{myenumerate}
+%@Correction:
+\begin{myenumerate}
+  \item\subitem{}\par
+\begin{multicols}{3}
+\opadd*{110}{18,75}{a}\opadd{110}{18,75}
+\par Antoine a besoin de \opprint{a}~\textgreek{\euro}.
+\par
+\opadd*{53,35}{15}{b}\opadd{53,35}{15}
+\par Antoine dispose de \opprint{b}~\textgreek{\euro}.
+\par
+\opsub*{a}{b}{c}\opsub[carrysub=true]{a}{b}
+\par Il manque \opprint{c}~\textgreek{\euro} à Antoine.
+\end{multicols}
+\item\subitem{}\par
+\opsub*{191,73}{c}{d}\opsub[carrysub=true]{191,73}{c}\kern2cm Il restera \opprint{d}~\textgreek{\euro} sur son livret.
+\end{myenumerate}
+%@Commentaire: Encore une situation concrète. Le sens des opérations est une nouvelle fois privilégié.

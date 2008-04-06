@@ -1,0 +1,26 @@
+input geometriesyr16;
+%u:=sqrt(2)*cm;
+figure(0,-3u,9.5u,6.5u);
+pair A,B,C,D,E,F,A',B',C',D';
+A=u*(1,1);
+B-A=u*(8,0);
+C-B=u*(0,5);
+D-C=A-B;
+E-A=u*(5,0);
+F-A=u*(0,4);
+A'=symetrie(A,E,F);
+B'=symetrie(B,E,F);
+C'=symetrie(C,E,F);
+D'=symetrie(D,E,F);
+trace polygone(A',B',C',D') withcolor blanc;
+trace droite(E,F) withcolor blanc;
+trace polygone(A,B,C,D);
+trace codeperp(D,A,B,5);
+trace codeperp(A,B,C,5);
+trace codeperp(B,C,D,5);
+nomme.llft(A);
+nomme.lrt(B);
+nomme.urt(C);
+nomme.ulft(D);
+fin;
+end

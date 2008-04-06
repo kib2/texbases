@@ -1,0 +1,21 @@
+input geometriesyr16;
+figure(0,0,8u,5.5u);
+trace feuillet withcolor blanc;
+  pair A,B,C,D,E;
+  A=u*(5,1);
+  C=u*(1,5);
+  D=rotation(A,C,40);
+  E=projection(C,A,D);
+  B=1/2[C,E];
+  marque_p:="creux";
+  pointe(A,B,C,D,E);
+  marque_p:="croix";
+  pointe(A,B,C,D,E);
+  marque_p:="non";
+  label.bot(btex $1,2$ etex,A);
+  label.bot(btex $1,22$ etex,C);
+  label.lrt(btex $1,202$ etex,E);
+  label.llft(btex $1,02$ etex,B);
+  label.top(btex $1,222$ etex,D);
+fin;
+end

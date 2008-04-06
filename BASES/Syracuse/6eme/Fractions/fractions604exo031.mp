@@ -1,0 +1,23 @@
+input geometriesyr16;
+figure(0,0,17u,2u);
+quad.u=1cm;
+x.u=4cm;
+y.u=1cm;
+origine((1,1));
+drawarrow (x.so*cm,y.origine)--(x.ne*cm,y.origine) withpen pencircle scaled 1.5bp;
+marque_p:="tiretv";
+for k=1 upto 30:
+pointe((k/7)[placepoint(0,0),placepoint(1,0)]);
+endfor;
+marque_p:="plein";
+for k=0 upto 4:
+pointe(placepoint(k,0));
+endfor;
+marque_p:="non";
+label.bot(btex 1 etex,placepoint(1,0));
+pair O;
+O=placepoint(0,0);
+nomme.top(O);
+fin;
+end
+

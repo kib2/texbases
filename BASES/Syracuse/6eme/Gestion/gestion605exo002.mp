@@ -1,0 +1,46 @@
+input geometriesyr16;
+input LATEX;
+figure(0,0,11u,9u);
+trace grille(0.5) withcolor orange;
+origine((2,1));
+drawarrow pp(0,0)--pp(0,17) withpen pensquare scaled 1.5bp;
+drawarrow pp(0,0)--pp(20,0) withpen pensquare scaled 1.5bp;
+label.llft(btex 0 etex,pp(0,0));
+for k=1 upto 7:
+  label.lft(format("%10f",20*k),placepoint(0,2*k));
+endfor;
+label.rt(btex hauteur de pluie (en mm) etex,pp(0,16));
+for k=1 upto 6:
+  label.bot(format("%10f",5*k),pp(2*k,0));
+endfor;
+label.llft(LATEX("temp\'erature (\degres C)"),pp(19,0));
+pair Ja,F,M,A,Ma,Ju,Jl,Ao,S,O,N,D;
+Ja=pp(8/2.5,90/10);
+F=pp(11/2.5,95/10);
+M=pp(12/2.5,75/10);
+A=pp(13/2.5,60/10);
+Ma=pp(16/2.5,45/20);
+Ju=pp(20/2.5,10/10);
+Jl=pp(22/2.5,5/10);
+Ao=pp(24/2.5,15/10);
+S=pp(21/2.5,50/10);
+O=pp(20/2.5,108/10);
+N=pp(15/2.5,130/10);
+D=pp(11/2.5,150/10);
+marque_p:="plein";
+nomme.llft(Ja);
+nomme.urt(F);
+nomme.llft(M);
+nomme.llft(A);
+nomme.llft(Ma);
+nomme.llft(Ju);
+nomme.rt(Jl);
+nomme.rt(Ao);
+nomme.rt(S);
+nomme.urt(O);
+nomme.urt(N);
+nomme.lft(D);
+marque_p:="non";
+trace polygone(Ja,F,M,A,Ma,Ju,Jl,Ao,S,O,N,D);
+fin;
+end

@@ -1,0 +1,20 @@
+input geometriesyr16;
+u:=7.5mm;
+figure(0,0,8u,6u);
+pair A,B,C,D,E,F,G,H;
+A=u*(0.5,0.5);
+B-A=u*(7,0);
+C-B=u*(0,5);
+D-C=A-B;
+trace polygone(A,B,C,D);
+E=2/5[A,B];
+G-E=C-B;
+H=2/5[D,A];
+F-H=B-A;
+trace segment(F,H);
+trace segment(E,G);
+trace segment(D,B);
+label(btex A etex,iso(F,G));
+label(btex B etex,iso(E,H));
+fin;
+end

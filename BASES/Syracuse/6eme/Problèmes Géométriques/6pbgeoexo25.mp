@@ -1,0 +1,25 @@
+input geometriesyr16;
+marque_p:="croix";
+figuremainlevee(0,-3.5u,7u,7u);
+u:=5mm;
+pair A,B,C,D,E;
+B=u*(1,1);
+C=pointarc(cercles(B,4u),340);
+A=rotation(C,B,60);
+D=symetrie(cercles(A,8u) intersectionpoint cercles(C,6u),A,C);
+E=symetrie(cercles(D,5u) intersectionpoint cercles(C,5u),D,C);
+trace polygone(B,A,D,E,C);
+trace chemin(A,C,D);
+trace Codelongueur(A,B,B,C,C,A,2);
+trace Codelongueur(C,E,E,D,1);
+nomme.lft(B);
+nomme.llft(C);
+nomme.bot(E);
+nomme.rt(D);
+nomme.top(A);
+trace appelation(B,A,3mm,btex 4~cm etex);
+trace appelation(A,D,3mm,btex 8~cm etex);
+trace appelation(C,E,-3mm,btex 5~cm etex);
+trace appelation(C,D,3mm,btex 6~cm etex);
+finmainlevee;
+end

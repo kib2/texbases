@@ -1,0 +1,14 @@
+%@P:exocorcp
+%@Dif:2
+Un quadrilatère a pour périmètre 450~m.\\Le premier côté mesure 60~m, le deuxième 110~m. La longueur du troisième côté est la somme de celles du premier et du second.\\Calcule la longueur du quatrième côté.
+%@Correction:
+\begin{multicols}{3}
+\opadd*{60}{110}{a}\opadd{60}{110}
+\par Le 3\ieme\ côté mesure \opprint{a}~m.\par
+\opadd*{a}{a}{b}\opadd{a}{a}
+\par Il y a déjà \opprint{b}~m.
+\par
+\opsub*{450}{b}{c}\opsub{450}{b}
+\par le 4\ieme\ côté mesure \opprint{c}~m.
+\end{multicols}
+%@Commentaire: On peut le donner en début d'année pour vérifier les acquis sur les périmètres, ou au début du chapitre sur les périmètres ou en interrogation après avoir fait ce cours.

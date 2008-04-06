@@ -31,7 +31,6 @@ import gobject
 # Dans on_open_file ouvrir aussi les pdf
 # Pouvoir modifier & sauvegarder le fichier LaTeX edite
 # Voir le niveau de zoom dans la statusbar
-# Plusieurs feuilles de template
 
 APPLIREP = os.getcwd()
 
@@ -53,10 +52,15 @@ class Syracuse:
     def __init__(self):
 
         # Va lire le fichier de config
+        # pour construire le dico self._conf
         self.readConf()
-        print self._conf
-        #
+        
+        # Nom de fichier edite
+        self.current_file = None
+
+        # URI de la page d'acceuil en PDF
         self.pdf_url = "file://" + self._conf["PAGE_ACCEUIL"]
+        
         # On recupere le fichier glade en XML
         self.wTree = gtk.glade.XML("texbases.glade")
         self.window = self.wTree.get_widget("window")
@@ -68,6 +72,7 @@ class Syracuse:
             "on_button_minus_clicked" : self.on_button_minus_clicked,
             "on_button_compose_clicked" : self.on_button_compose_clicked,
             "on_button_out_clicked" : self.on_button_out_clicked,
+            "on_button_save_clicked" : self.on_button_save_clicked,
                 }
         self.wTree.signal_autoconnect(glade_signals)
         
@@ -105,6 +110,7 @@ class Syracuse:
         zoom        = config.getfloat(tbi, 'ZoomLevel')
         fonts       = config.get(tbi, 'Fonts')
         extensions  = config.get(tbi, 'Extens')
+        treefolding = config.getint(tbi, 'TreeFold')
         
         tbf = "TB_folders"
         base        = config.get(tbf, 'Base')
@@ -117,6 +123,7 @@ class Syracuse:
             "ZOOM" : zoom,
             "MYFONTS" : fonts,
             "EXTENSIONS" : tuple(extensions.split()),
+            "TREEFOLD"   : treefolding,
             
             "MYHOME" : os.path.join(APPLIREP,base),
             "TEMPLATES_DIR" : os.path.join(APPLIREP,templates),
@@ -126,8 +133,6 @@ class Syracuse:
             
         }
         self.NIVEAUX = os.listdir(self._conf["MYHOME"])
-        #print zoom, fonts, tuple(extensions.split())
-        #print base, templates, sortie, tempdir, acceuil
 
     def setupTreeView(self):
         """Construit l'arbre des donnees
@@ -206,6 +211,10 @@ class Syracuse:
         self.treeview.show()
         self.sw.show()
         
+        # Deplier le treeview
+        if self._conf["TREEFOLD"] :
+            self.treeview.expand_all()
+        
         # connexions
         self.treeview.connect('row-activated', self.on_open_file)
         self.renderer1.connect( 'toggled', self.on_toogle_selection, self.treestore )
@@ -261,18 +270,18 @@ class Syracuse:
         ex.close()
         
         # creer un fichier temp.tex dans le repertoire temp
-        fich = os.path.join(TEMPDIR,'temp.tex')
+        fich = os.path.join(self._conf["TEMPDIR"],'temp.tex')
         tex_temp = open(fich,'w')
         tex_temp.write("".join(contenu))
         tex_temp.close()
         
         # Lance pdflatex sur temp.tex dans le repertoire temp
-        cmd = 'pdflatex -output-directory="%s" --shell-escape -interaction=nonstopmode "%s"'%(TEMPDIR, fich)
+        cmd = 'pdflatex -output-directory="%s" --shell-escape -interaction=nonstopmode "%s"'%(self._conf["TEMPDIR"], fich)
         print "COMMANDE = %s"%cmd
         pdf_return = call(cmd, shell=True)
         
         # et deplace le fichier dans le rep de l'exercice
-        shutil.move(os.path.join(TEMPDIR,'temp.pdf'), os.path.join(exo_rep,exo_name))
+        shutil.move(os.path.join(self._conf["TEMPDIR"],'temp.pdf'), os.path.join(exo_rep,exo_name))
         
         # enleve maintenant tout dans temp
         
@@ -474,7 +483,8 @@ class Syracuse:
 
         doc = model.get_value(iter, 0)
         the_path = model.get_value(iter, 2)
-        print "THE PATH : %s"%the_path
+        print "EDITING FILE : %s"%the_path
+        self.current_file = os.path.join(self._conf["MYHOME"],the_path)
         
         ## set the pdf viewer
         the_path_extens = the_path[-3:] # extension sans le point
@@ -503,6 +513,26 @@ class Syracuse:
             self.pdf_url = "file://" + fn
             self.on_changed(uri="file://" + fn)
         return
+
+    def on_button_save_clicked(self, widget):
+        """Sauvegarde du document edite
+        """
+        if self.current_file :
+
+            doc = self.buffer
+
+            start = doc.get_start_iter()
+            end = doc.get_end_iter()
+            
+            if doc.get_selection_bounds():
+                start = doc.get_iter_at_mark(doc.get_insert())
+                end = doc.get_iter_at_mark(doc.get_selection_bound())
+
+            text = doc.get_text(start, end)
+            
+            f = open(self.current_file,'w')
+            f.write(text)
+            f.close()
 
     def on_button_plus_clicked(self, widget):
         """Zoom+ sur le PDF

@@ -1,0 +1,12 @@
+%@P:exocorcp
+%@Dif:3
+Au rayon charcuterie, un client achète 0,300~kg de mousse de canard à
+12,50~\textgreek{\euro} le kg ; 0,280~kg de pâté de campagne à
+11~\textgreek{\euro} le kg ; 0,250~kg de rillettes à
+13,56~\textgreek{\euro} le kg et 3 pâtés impériaux à 1,80~\textgreek{\euro} l'un. Avec 15,24~\textgreek{\euro}, aura-t-il assez d'argent pour payer ?
+%@Correction:
+\opmul*{0.300}{12.50}{a}\opmul*{0.280}{11}{b}\opmul*{0.250}{13.56}{c}\opmul*{3}{1.80}{d}
+\opadd*{a}{b}{e}\opadd*{e}{c}{f}\opadd*{f}{d}{g}
+\opmul{0.300}{12.50}\kern1cm\opmul{0.280}{11}\kern1cm\opmul{0.250}{13.56}\kern1cm\opmul{3}{1.80}
+\par Ce qui représente un total de \opprint{g}~\textgreek{\euro}. Donc le client ne dispose pas d'assez d'argent.
+%@Commentaire: Appropriation de la multiplication de deux nombres décimaux. Travail avec un facteur plus petit que 1.

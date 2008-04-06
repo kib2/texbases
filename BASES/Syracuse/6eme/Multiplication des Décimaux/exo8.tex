@@ -1,0 +1,42 @@
+%@P:exocorcp
+%@Dif:2
+Un quincaillier reçoit trois colis :
+\begin{itemize}
+\item le premier contient 250 marteaux pesant chacun 680~g;
+\item le deuxième contient 250 boîtes de 510 vis. Chaque vis pèse
+2,5~g;
+\item le troisième contient 25 boîtes de peinture de 3~kg chacune.
+\end{itemize}
+Quelle est la masse totale des colis déposés ?
+%@Correction:
+\begin{multicols}{3}
+  \begin{center}
+1\ier\ colis.\par
+    \begin{tabular}{c|b{2cm}}
+      Opération&\multicolumn{1}{c}{Solution}\\
+      \hline
+      \opmul*{250}{680}{a}\opmul{250}{680}&Le 1\ier\ colis pèse \opprint{a}~g soit \opdiv*{a}{1000}{a}{b} \opprint{a}~kg.\\
+    \end{tabular}
+  \end{center}
+\par\columnbreak
+  \begin{center}
+2\ieme\ colis.\par
+    \begin{tabular}{c|b{3cm}}
+      Opération&\multicolumn{1}{c}{Solution}\\
+      \hline
+      \opmul*{250}{510}{c}\opmul{250}{510}&\\
+\opmul*{c}{2,5}{b}\opmul{c}{2,5}&Il y avait \opprint{c} vis et la masse est \opprint{b}~g soit \opdiv*{b}{1000}{b}{d}\opprint{b}~kg.\\
+    \end{tabular}
+  \end{center}
+\par\columnbreak
+  \begin{center}
+3\ieme\ colis.\par
+    \begin{tabular}{c|b{2cm}}
+      Opération&\multicolumn{1}{c}{Solution}\\
+      \hline
+      \opmul*{25}{3}{d}\opmul{25}{3}&Le 3\ieme\ colis pèse \opprint{d}~kg.\\
+    \end{tabular}
+  \end{center}
+\end{multicols}
+La masse totale est \opadd*{a}{b}{e}\opadd*{e}{d}{e}\opprint{e}~kg.
+%@Commentaire: C'est de la proportionnalité. La multiplication est ici vue comme opérateur.

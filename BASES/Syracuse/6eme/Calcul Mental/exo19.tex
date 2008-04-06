@@ -1,0 +1,13 @@
+%@Auteur:Véronique Glaçon\par
+Complète le tableau suivant :\par
+\renewcommand{\arraystretch}{1.8}
+\[\begin{tabular}{c|>{\centering}p{1.2cm}|>{\centering}p{1.2cm}|>{\centering}p{1.2cm}|>{\centering}p{1.2cm}|>{\centering}p{1.2cm}|>{\centering}p{1.2cm}|c}
+  \cline{2-7} \rnode{A}{} & $40,9$ & & & & $2,07$ & &\tabularnewline
+  \cline{2-7} \rnode{B}{} & & $20$ & & $1,2$ & & & \rnode{C}{}\tabularnewline
+  \cline{2-7}  & & & $\nombre{8321}$ & & & $5,6$ & \rnode{D}{}\tabularnewline
+  \cline{2-7} 
+\end{tabular}\]
+\ncbar[angle=180,arm=0.8]{->}{A}{B} \ncput*{$\times10$}
+\ncbar[angle=0,arm=0.8]{->}{C}{D} \ncput*{$\times100$}
+\renewcommand{\arraystretch}{1}
+%@Commentaire:Applications des règles de calculs. La difficulté est de s'approprier le tableau : comment complèter les cases vides ?

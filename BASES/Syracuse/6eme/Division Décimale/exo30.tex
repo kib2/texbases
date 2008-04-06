@@ -1,0 +1,20 @@
+%@P:exocorcp
+%@Dif:2
+Voici la table de multiplication de 78 :
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$1\times78=78$&$4\times78=312$&$7\times78=546$\\
+\hline
+$2\times78=156$&$5\times78=390$&$8\times78=624$\\
+\hline
+$3\times78=234$&$6\times78=468$&$9\times78=702$\\
+\hline
+\end{tabular}
+\end{center}
+\`A l'aide de cette table, donne une valeur approchée au centième près
+par excès du quotient décimal de 45\,017 par 78.
+%@Correction:
+\opdiv*{45017}{78}{q}{r}\opround{q}{2}{q}\opdiv[maxdivstep=6]{45017}{78}
+\par Donc une valeur approchée au centième près par excès du quotient est \opadd*{q}{0,01}{a}\opprint{q}.
+%@Commentaire: On cherche à vérifier si la technique de calcul est maîtrisée.

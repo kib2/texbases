@@ -1,0 +1,14 @@
+%@P:exocorcp
+\begin{myenumerate}
+\item Le prix total des pommes est 5,22~\textgreek{\euro} et le prix au
+kilo est 2,9~\textgreek{\euro}. Quel est le poids des pommes achetées ?
+\item 2,5~kg de pommes coûtent 5,5~\textgreek{\euro}. Quel est le
+prix d'un kilogramme ?
+\end{myenumerate}
+%@Correction:
+{\opset{decimalsepsymbol={,}}
+\begin{myenumerate}
+  \item\subitem{}\par\dispo{1}{\opdiv[shiftdecimalsep=none]{5,22}{2,9}\opdiv*{5,22}{2,9}{a}{c}}{Le poids de pommes achetées est \opprint{a}~kg.}
+  \item\subitem{}\par\dispo{1}{\opdiv[shiftdecimalsep=none]{5,5}{2,5}\opdiv*{5,5}{2,5}{b}{c}}{Le prix d'un kilogramme de pommes est \opprint{b}~\textgreek{\euro}.}
+\end{myenumerate}
+}

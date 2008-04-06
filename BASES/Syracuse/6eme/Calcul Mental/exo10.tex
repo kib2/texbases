@@ -1,0 +1,20 @@
+%@Dif:2
+\renewcommand{\arraystretch}{1.25}
+\hspace*{1cm}\dispo{1}{\begin{tabular}{c|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+  \cline{2-5}
+&&&&\\
+\cline{2-5}
+&&&&\\
+\cline{2-5}
+\rnode{A}{}&&&&\\
+\cline{2-5}
+\rnode{B}{}&\multicolumn{1}{c|}{3}&&&\\
+\cline{2-5}
+\multicolumn{1}{c}{\rnode{C}{}}&\multicolumn{1}{c}{\rnode{D}{}}\\
+\end{tabular}
+\ncline{->}{B}{A}
+\naput{$\times6$}
+\ncline{->}{C}{D}
+\nbput{$\times7$}}{Complète le tableau ci-contre.}
+\vspace*{3mm}
+\renewcommand{\arraystretch}{1}

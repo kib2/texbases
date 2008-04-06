@@ -1,0 +1,23 @@
+input geometriesyr16;
+figure(0,0,5u,5u);
+pair A,B,C,D,M,N,Q,P;
+A=u*(1,3);
+D=u*(2,1.5);
+C=u*(4,1);
+B=u*(3,4);
+M=iso(A,B);
+N=iso(B,C);
+P=iso(C,D);
+Q=iso(D,A);
+trace polygone(A,B,C,D);
+trace polygone(M,N,P,Q);
+nomme.lft(A);
+nomme.llft(Q);
+nomme.bot(D);
+nomme.bot(P);
+nomme.lrt(C);
+nomme.rt(N);
+nomme.top(B);
+nomme.ulft(M);
+fin;
+end

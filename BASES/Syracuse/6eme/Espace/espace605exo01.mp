@@ -1,0 +1,26 @@
+input geometriesyr16;
+figure(0,0,15u,10u);
+pair A,B,C,D,E,F,G,H,I,J,K,L,M,N;
+A=u*(1,2);
+B-A=u*(1,0);
+C-B=u*(0,2);
+D-C=A-B;
+E=rotation(D,C,-90);
+F-E=u*(3,0);
+G-C=F-E;
+H=rotation(F,G,-90);
+I-H=F-E;
+J-I=B-C;
+K-J=H-I;
+L-K=G-H;
+M-L=G-F;
+N-M=B-L;
+trace polygone(A,B,C,G,F,E,C,D) withpen pencircle scaled 1.25bp;
+fin;
+figure(0,0,15u,10u);
+drawoptions(withpen pencircle scaled 1.25bp);
+trace polygone(A,J,I,D);
+trace polygone(N,M,F,E);
+trace segment(H,K);
+fin;
+end

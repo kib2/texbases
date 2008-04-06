@@ -1,0 +1,35 @@
+\begin{minipage}{0.25\linewidth}
+  \rnode{A}{2}\kern1cm\rnode{B}{0}\kern1cm\rnode{C}{0}\kern1cm\rnode{D}{6}
+  \par\vspace{5mm}\par
+  \rnode{E}{0}\kern1cm\rnode{F}{0}\kern1cm\rnode{G}{0}
+  \par\vspace{5mm}\par
+  \rnode{H}{0}\kern1cm\rnode{I}{6}
+  \par\vspace{5mm}\par
+  \rnode{J}{6}
+\end{minipage}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{A}{B}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{B}{C}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{C}{D}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{A}{E}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{B}{F}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{C}{G}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{E}{F}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{F}{G}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{E}{H}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{F}{I}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{H}{I}
+\ncline[nodesep=1mm,linestyle=dashed]{->}{H}{J}
+\hfill
+\begin{minipage}{0.72\linewidth}
+  De combien de façons peut-on obtenir le nombre 2006 en suivant
+les flèches de la figure ?
+\begin{multicols}{5}
+  \begin{enumerate}[A/]
+  \item 12
+  \item 11
+  \item 10
+  \item 8
+  \item 6
+  \end{enumerate}
+\end{multicols}
+\end{minipage}

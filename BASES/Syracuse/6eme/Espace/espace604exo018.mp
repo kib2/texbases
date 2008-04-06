@@ -1,0 +1,27 @@
+input geometriesyr16;
+figureespace(-10u,-10u,10u,10u);
+Initialisation(5,30,30,500);
+color A,B,C,D,E,F,G,H;
+D=(0,0,0);
+A=(1,0,0);
+B-A=(0,1.5,0);
+C-B=D-A;
+E-D=(0,0,0.5);
+F-A=E-D;
+G-B=E-D;
+H-C=E-D;
+trace polygone(A,B,G,F);
+trace polygone(B,C,H,G);
+trace chemin(F,E,H);
+trace chemin(A,D,E) dashed evenly;
+trace chemin(D,C) dashed evenly;
+drawarrow reverse(Projette(iso(A,F))--Projette(iso(A,F)+(0,-0.5,0)));
+label.lft(btex \dots etex,Projette(iso(A,F)+(0,-0.5,0)));
+drawarrow reverse(Projette(E)--Projette(E+(0,0,0.5)));
+label.top(btex \dots etex,Projette(E+(0,0,0.5)));
+drawarrow reverse(Projette(iso(A,B,G,F))--Projette(iso(A,B,G,F)+(0.5,0,0)));
+marque_p:="plein";
+pointe(iso(A,B,G,F));
+label.bot(btex \dots etex,Projette(iso(A,B,G,F)+(0.5,0,0)));
+finespace;
+end

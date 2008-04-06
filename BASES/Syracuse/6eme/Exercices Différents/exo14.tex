@@ -1,0 +1,74 @@
+%@Titre: La planète Codus.
+%@Auteur: Académie d'Orléans (?)\par
+L'agent Codus est un super agent de contrôle dont les missions
+consistent à vérifier la codification des codes barres. Sur la planète
+Codus, les codes barres ont 5 chiffres.
+\par\'Etant débordé dans son travail, notre super héros fait appel à
+tes services. Dès ton arrivée, il t'explique comment contrôler un code
+barre sur une boîte de conserve qui fait fureur sur la planète Codus :
+{\em Le ragoût de lézard}.
+Voici le numéro du code barre de la boîte de conserve : 2 587 4.
+\par L'agent Codus place ce code dans son super tableau d'analyse.
+\par\vspace{2mm}\par\dispo{1}{
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Pays&\multicolumn{3}{c|}{Produit}&Clé\\
+    \hline
+    2&5&8&7&4\\
+    \hline
+    $P$&$A$&$B$&$C$&$K$\\
+    \hline
+  \end{tabular}
+}{Pour vérifier que la clé est correcte, utilise la formule magique
+\[F=P+(3\times A)+B+(3\times C)+K\]
+Si $F$ est un multiple de 10 alors la clé est correcte et le produit peut-être mis en vente.
+}
+\par\vspace{2mm}\par
+Pour la boîte de lézard, on a $F=2+(3\times5)+8+(3\times7)+4=50$. {\bf
+  Comme 50 est un multiple de 10, donc la clé est juste et le
+  code-barre est accepté. Dans ce cas, le produit a le droit d'être
+  mis en vente.}
+\begin{description}
+  \item[Formation] On craint une erreur sur les bouteilles de lait de mammouth ! Le code-barre est 6 281 8. Est-il correct ?
+\par
+\dispo{1}{
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Pays&\multicolumn{3}{c|}{Produit}&Clé\\
+    \hline
+    &&&&\\
+    \hline
+    $P$&$A$&$B$&$C$&$K$\\
+    \hline
+  \end{tabular}
+}{\[\Eqalign{
+F&=P+(3\times A)+B+(3\times C)+K\cr
+F&=\ldots+(3\times\ldots)+\ldots+(3\times\ldots)+\ldots\cr
+F&=\ldots\cr
+}\]}
+\item[Mission \no 1] L'agent Codus m'emmène avec lui au
+  SUPERMARCHIX. Le directeur nous demande de détecter les codes faux
+  puis de changer la clé pour qu'ils deviennent corrects.
+  \begin{itemize}
+  \item Shampooing anti-tique : 4 785 7
+  \item Confiture de limaces : 0 147 2
+  \item Bonbons Codus : 7 143 9
+  \end{itemize}
+\item[Mission \no2] \`A peine fini, que le directeur arrive en criant
+  : \og notre ordinateur a un virus. Il ne marque plus la clé. Nous
+  courons à la ruine. Faites quelque chose !\fg.
+  \begin{itemize}
+  \item Pomme animée : 1 547 ?
+  \item Balai magique : 9 704 ?
+  \item Lampe automatique : 2 036 ?
+  \end{itemize}
+\item[Mission \no3] Le directeur vérifie que les caissières frappent
+  bien le code 8 167 2. Trois d'entre elles se sont trompées et le
+  directeur demande à Codus de vérifier si pour chacune d'elles,
+  l'ordinateur détecte l'erreur.
+  \begin{itemize}
+  \item Hôtesse \no1 : 8 167 3
+  \item Hôtesse \no2 : 8 176 2
+  \item Hôtesse \no3 : 8 617 2
+  \end{itemize}
+\end{description}

@@ -1,0 +1,30 @@
+%@P:exocorcp
+%@Auteur: IREM Strasbourg
+\par J'ai acheté 15 pieds d'impatientes pour 63~\textgreek{\euro}.
+\begin{myenumerate}
+  \item Un pied d'impatientes coûte-t-il :
+\begin{itemize}
+\item entre 2~\textgreek{\euro} et 3~\textgreek{\euro} ?
+\item entre 3~\textgreek{\euro} et 4~\textgreek{\euro} ?
+\item entre 4~\textgreek{\euro} et 5~\textgreek{\euro} ?
+\item entre 5~\textgreek{\euro} et 6~\textgreek{\euro} ?
+\end{itemize}
+\item Calculer le prix exact d'un pied de ces impatientes.
+\end{myenumerate}
+%@Correction:
+\begin{myenumerate}
+  \item On a 
+\begin{multicols}{5}
+\opmul[style=text]{15}{2}
+\par
+\opmul[style=text]{15}{3}
+\par
+\opmul[style=text]{15}{4}
+\par
+\opmul[style=text]{15}{5}
+\par
+\opmul[style=text]{15}{6}
+\end{multicols}
+Donc un pied d'impatientes coûte entre 4~\textgreek{\euro} et 5~\textgreek{\euro}.
+\item\subitem{}\par\dispo{1}{\opdiv*{63}{15}{a}{b}\opdiv{63}{15}}{Donc le prix d'un pied d'impatientes est \opprint{a}~\textgreek{\euro}.}
+\end{myenumerate}

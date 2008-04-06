@@ -1,0 +1,40 @@
+input geometriesyr16;
+figure(0,0,20u,20u);
+%%Définition des points
+pair A,B;
+A=u*(5,10);
+B-A=u*(10,0);
+path cc;
+cc=cercledia(A,B);
+pair O;
+O=iso(A,B);
+path dd;
+dd=perpendiculaire(A,B,O);
+pair K;
+K=cc intersectionpoint dd;
+pair I;
+I=iso(O,B);
+path cd;
+cd=cercledia(O,B);
+pair J;
+J=cd intersectionpoint segment(K,I);
+path ce;
+ce=cercles(K,J);
+pair D,E;
+D=cc intersectionpoint ce;
+E=ce intersectionpoint cc;
+path cf;
+cf=cercles(D,E);
+pair F;
+F=reverse(cf) intersectionpoint cc;
+path cg;
+cg=cercles(E,D);
+pair H;
+H=cg intersectionpoint (subpath(0.25*length cc,0.75*length cc) of cc);
+pair G;
+G=symetrie(K,O);
+%%Tracé
+remplis polygone(D,G,E,F,H) withcolor orange;
+trace polygone(D,G,E,F,H);
+fin;
+end

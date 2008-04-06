@@ -1,0 +1,26 @@
+input geometriesyr16;
+input LATEX;
+figure(0,0,8u,8u);
+pair O,A,B,C,D,E,F;
+path cc;
+O=u*(4,4);
+cc=cercles(O,3u);
+A=pointarc(cc,0);
+F=pointarc(cc,45);
+B=pointarc(cc,90);
+C=pointarc(cc,180);
+D=symetrie(B,O);
+E=symetrie(F,O);
+trace cc;
+trace segment(A,C);
+trace segment(B,D);
+trace segment(E,F);
+trace arccercle(O,C,iso(O,C));
+trace arccercle(O,A,iso(O,A));
+trace hachurage(O--B--arccercle(B,C,O)--reverse(arccercle(O,C,iso(O,C)))--cycle,60,0.2,0);
+trace hachurage(O--E--arccercle(E,D,O)--cycle,60,0.2,0);
+trace hachurage(A--O--arccercle(O,A,iso(O,A))--cycle,60,0.2,0);
+trace codeperp(B,O,A,10);
+trace marqueangle(C,O,E,0);
+label.llft(LATEX("45\degres"),w);
+fin;end

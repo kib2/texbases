@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.0 on Fri Apr  4 11:23:21 2008 -->
+<!--Generated with glade3 3.4.0 on Sun Apr  6 21:36:59 2008 -->
 <glade-interface>
   <widget class="GtkWindow" id="window">
     <property name="width_request">1024</property>
@@ -231,6 +231,18 @@
                 <property name="label" translatable="yes">Composer</property>
                 <property name="icon">applications-accessories.png</property>
                 <signal name="clicked" handler="on_button_compose_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkToolButton" id="button_save">
+                <property name="visible">True</property>
+                <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
+                <property name="label" translatable="yes">Sauvegarder</property>
+                <property name="icon">document-save.png</property>
+                <signal name="clicked" handler="on_button_save_clicked"/>
               </widget>
               <packing>
                 <property name="expand">False</property>

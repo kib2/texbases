@@ -1,0 +1,29 @@
+%@Auteur: François Meria\par
+\begin{multicols}{2}
+\begin{center}
+\pspicture(5,4)
+    \pstGeonode[PointSymbol=none,PosAngle={235,0,45}](0,0){S}(5,0){x}(4,4){y}
+    \pstLineAB{S}{x} \pstLineAB{S}{y}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{y}{t}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{t}{S}{y}{t_1}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{t_1}{S}{y}{t_2}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{t}{t_3}
+    \pstBissectBAC[linecolor=black,PointSymbol=none]{x}{S}{t_3}{t_4}
+\endpspicture
+\end{center}
+
+\columnbreak
+
+Parmi les demi-droites tracées à l'intérieur de l'angle
+$\widehat{xSy}$, quelle est la bissectrice de l'angle
+$\widehat{xSy}$ ? \dotfill\\
+\null \dotfill\\
+\null \dotfill\\
+Vérifier à l'aide du rapporteur et compléter :\\
+\begin{myenumerate}
+    \item La bissectrice de l'angle $\widehat{xSy}$ est la
+    demi-droite \dotfill
+    \item Donc, les mesures des angles \phantom{blablabla} et
+    \phantom{blablabla} sont égales.
+\end{myenumerate}
+\end{multicols}

@@ -1,0 +1,22 @@
+%@Dif:3
+Reproduis et complète le chemin de multiplications ci-dessous.
+\begin{center}
+  \psframebox[framearc=0.15]{
+      \begin{tabular}{*{11}{c}}
+&&\rnode{B}{\ldots}&&&\rnode{D}{\ldots}&&&\rnode{F}{1,84}\\
+\\
+\\
+\rnode{A}{\ldots}&&&\rnode{C}{\ldots}&&&\rnode{E}{184}&\\
+      \end{tabular}
+}
+\end{center}
+\ncarc[nodesepA=1mm,nodesepB=1mm,arcangle=45]{->}{A}{B}
+\ncput{\psovalbox[fillstyle=solid]{{\footnotesize$\times10$}}}
+\ncarc[nodesepA=1mm,nodesepB=1mm,arcangle=-45]{->}{B}{C}
+\ncput{\psovalbox[fillstyle=solid]{{\footnotesize$\div100$}}}
+\ncarc[nodesepA=1mm,nodesepB=1mm,arcangle=45]{->}{C}{D}
+\ncput{\psovalbox[fillstyle=solid]{{\footnotesize$\times1\,000$}}}
+\ncarc[nodesepA=1mm,nodesepB=1mm,arcangle=-45]{->}{D}{E}
+\ncput{\psovalbox[fillstyle=solid]{{\footnotesize$\div10$}}}
+\ncarc[nodesepA=1mm,nodesepB=1mm,arcangle=45]{->}{E}{F}
+\ncput{\psovalbox[fillstyle=solid]{{\footnotesize$\div100$}}}

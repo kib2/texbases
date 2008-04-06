@@ -1,0 +1,24 @@
+input geometriesyr16;
+figure(0,0,10u,10u);
+pair A,B,C,D,A',B',C',D',E,F,G;
+G=u*(9,6);
+F=u*(1,4);
+trace droite(G,F);
+label.ulft(btex $(d)$ etex,G);
+A=u*(2,1.5);
+B'=u*(3,4);
+C=u*(2,6);
+D=u*(3,8);
+E=1/4[G,F];
+A'=symetrie(A,E,F);
+B=symetrie(B',E,F);
+C'=symetrie(C,E,F);
+D'=symetrie(D,E,F);
+marque_p:="croix";
+nomme.llft(A);
+nomme.lrt(B);
+nomme.llft(C);
+nomme.ulft(D);
+nomme.ulft(E);
+fin;
+end

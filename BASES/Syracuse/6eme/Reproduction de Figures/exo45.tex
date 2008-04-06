@@ -1,0 +1,122 @@
+%@Auteur: François Meria\par
+\begin{multicols}{2}
+    \begin{center}
+    \psset{unit=0.4cm}
+        \pspicture(15,15)
+            \pstGeonode[PointSymbol=none,PosAngle={235,-45,45,135,0,90}](0,0){D}(15,0){C}(15,15){B}(0,15){A}(15,7.5){J}(7.5,15){I}
+            \pspolygon(A)(B)(C)(D)
+            \pstInterLL[PointSymbol=none,PosAngle=-118]{A}{C}{B}{D}{O}
+            \psline(A)(C)
+            \psline(B)(D)
+            \pstGeonode[PointSymbol=none,PointName=none](7.5,0){I_1}(0,7.5){J_1}
+            \psline(J)(J_1)
+            \psline(I)(I_1)
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{D}{A}{O}{M_1}%
+            \pstInterLL[PointName=none,PointSymbol=none]{A}{M_1}{J}{O}{T_1}%
+            \psline(A)(T_1)
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{O}{A}{B}{M_2}%
+            \pstInterLL[PointName=none,PointSymbol=none]{A}{M_2}{I}{O}{T_2}%
+            \psline(A)(T_2)
+            \psline(T_1)(T_2)
+            \pstMarkAngle[MarkAngleRadius=1.2]{T_1}{A}{O}{}
+            \pstMarkAngle[MarkAngleRadius=1.4]{T_1}{A}{O}{}
+            \pstMarkAngle[MarkAngleRadius=1.4]{O}{A}{T_2}{}
+            \pstMarkAngle[MarkAngleRadius=1.6]{O}{A}{T_2}{}
+
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{B}{O}{I}{N_1}%
+            \pstInterLL[PointName=none,PointSymbol=none]{O}{N_1}{I}{B}{P_1}%
+            \psline(O)(P_1)
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{J}{O}{B}{N_2}%
+            \pstInterLL[PointName=none,PointSymbol=none]{O}{N_2}{J}{B}{P_2}%
+            \psline(O)(P_2)
+            \psline(P_1)(P_2)
+            \pstMarkAngle[MarkAngleRadius=1.2]{B}{O}{P_1}{}
+            \pstMarkAngle[MarkAngleRadius=1.4]{B}{O}{P_1}{}
+            \pstMarkAngle[MarkAngleRadius=1.4]{P_2}{O}{B}{}
+            \pstMarkAngle[MarkAngleRadius=1.6]{P_2}{O}{B}{}
+%fin de la première partie de la construction
+            \put(6.2,-1){Figure 1}
+        \endpspicture
+\end{center}
+\par\columnbreak\par
+\begin{enumerate}[1.]
+  \item
+    \begin{enumerate}[(a)]
+    \item Tracer un carré $ABCD$ de $15$~cm de côté et ses quatre axes
+de symétrie. Appeler $O$ leur point d'intersection.
+    \item Placer le point $I$, milieu du segment $[AB]$ et le point
+$J$, milieu du segment $[BC]$.
+    \item Construire les bissectrices des angles $\widehat{OAD}$,
+$\widehat{OAB}$, $\widehat{IOB}$ et $\widehat{JOB}$.
+     \item Compléter la construction pour obtenir la figure 1.
+     \end{enumerate}
+    \item
+        \begin{enumerate}[(a)]
+        \item Compléter la figure 1 par symétrie par rapport aux deux
+diagonales du carré $ABCD$.
+        \item Colorier la figure 2 à l'aide de deux couleurs que l'on
+alternera.
+        \end{enumerate}
+\end{enumerate}
+\end{multicols}
+\begin{center}
+    \psset{unit=1cm}
+        \pspicture(15,15)
+            \pstGeonode[PointSymbol=none,PointName=none,PosAngle={235,-45,45,135,0,90}](0,0){D}(15,0){C}(15,15){B}(0,15){A}(15,7.5){J}(7.5,15){I}
+            \pspolygon(A)(B)(C)(D)
+            \pstInterLL[PointSymbol=none,PointName=none,PosAngle=50]{A}{C}{B}{D}{O}
+            \psline(A)(C)
+            \psline(B)(D)
+            \pstGeonode[PointSymbol=none,PointName=none](7.5,0){I_1}(0,7.5){J_1}
+            \psline(J)(J_1)
+            \psline(I)(I_1)
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{D}{A}{O}{M_1}%
+            \pstInterLL[PointName=none,PointSymbol=none]{A}{M_1}{J}{O}{T_1}%
+            \psline(A)(T_1)
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{O}{A}{B}{M_2}%
+            \pstInterLL[PointName=none,PointSymbol=none]{A}{M_2}{I}{O}{T_2}%
+            \psline(A)(T_2)
+            \psline(T_1)(T_2)
+
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{B}{O}{I}{N_1}%
+            \pstInterLL[PointName=none,PointSymbol=none]{O}{N_1}{I}{B}{P_1}%
+            \psline(O)(P_1)
+            \pstBissectBAC[linestyle=none,PointSymbol=none,PointName=none]{J}{O}{B}{N_2}%
+            \pstInterLL[PointName=none,PointSymbol=none]{O}{N_2}{J}{B}{P_2}%
+            \psline(O)(P_2)
+            \psline(P_1)(P_2)
+
+%fin de la première partie de la construction
+
+            \pstOrtSym[PointName=none,PointSymbol=none]{B}{D}{T_1}{Q_1}
+            \pstOrtSym[PointName=none,PointSymbol=none]{B}{D}{T_2}{Q_2}
+            \pspolygon(Q_1)(Q_2)(C)
+
+            \pstOrtSym[PointName=none,PointSymbol=none]{A}{C}{P_1}{R_1}
+            \pstOrtSym[PointName=none,PointSymbol=none]{A}{C}{P_2}{R_2}
+            \pspolygon(R_1)(R_2)(O)
+
+%coloriage
+            \pstInterLL[PointName=none,PointSymbol=none]{T_1}{T_2}{O}{A}{S}
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](A)(T_2)(S)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](O)(T_1)(S)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](A)(J_1)(T_1)
+
+            \pstInterLL[PointName=none,PointSymbol=none]{P_1}{P_2}{O}{B}{S_1}
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](O)(P_1)(I)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](O)(S_1)(P_2)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](P_1)(S_1)(B)
+
+            \pstInterLL[PointName=none,PointSymbol=none]{R_1}{R_2}{O}{D}{U}
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](O)(R_1)(U)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](D)(U)(R_2)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](R_2)(O)(I_1)
+
+            \pstInterLL[PointName=none,PointSymbol=none]{Q_1}{Q_2}{O}{C}{U_1}
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](Q_1)(U_1)(C)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](O)(U_1)(Q_2)
+            \pspolygon[fillstyle=solid,fillcolor=lightgray](Q_2)(J)(C)
+
+            \put(6.7,-0.7){Figure 2}
+        \endpspicture
+\end{center}

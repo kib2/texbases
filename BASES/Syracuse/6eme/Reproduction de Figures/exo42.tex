@@ -1,0 +1,58 @@
+%@Auteur: François Meria\par
+\vspace*{1cm}\par
+\begin{multicols}{2}
+On veut construire la figure ci-contre. Pour cela voici le
+programme de construction. Construire la figure correspondant au
+programme de construction suivant. Toutes les longueurs données
+sont exprimées en cm. \textit{On laissera apparaître tous les
+traits de construction}.
+
+\columnbreak
+
+\begin{center}
+\psset{unit=0.5cm} \pspicture(2,5)(12,10)
+    \pstGeonode[PointSymbol=none,PosAngle={180,0}](2,7){R}(8,7){S}
+    \pstGeonode[PointName=none,PointSymbol=none](3,7){Z}(5,7){Q}(7,7){W}(9,7){N}(11,7){M}(13,7){P}
+    \pstInterCC[PointName=none,PointSymbol=none]{S}{R}{R}{Z}{A}{B}
+    \pstInterCC[PointName=none,PointSymbol=none]{S}{R}{R}{Q}{C}{D}
+    \pstInterCC[PointName=none,PointSymbol=none]{S}{R}{R}{W}{E}{F}
+    \pstInterCC[PointName=none,PointSymbol=none]{S}{R}{R}{N}{G}{H}
+    \pstInterCC[PointName=none,PointSymbol=none]{S}{R}{R}{M}{I}{J}
+    \pstInterCC[PointName=none,PointSymbol=none]{S}{R}{R}{P}{K}{L}
+
+    \pstLineAB{R}{S} \pstLineAB{A}{R} \pstLineAB{A}{S}
+    \pstLineAB{B}{R} \pstLineAB{B}{S} \pstLineAB{C}{R}
+    \pstLineAB{C}{S} \pstLineAB{D}{R} \pstLineAB{D}{S}
+    \pstLineAB{E}{R} \pstLineAB{E}{S} \pstLineAB{F}{R}
+    \pstLineAB{F}{S} \pstLineAB{G}{R} \pstLineAB{G}{S}
+    \pstLineAB{H}{R} \pstLineAB{H}{S} \pstLineAB{I}{R}
+    \pstLineAB{I}{S} \pstLineAB{J}{R} \pstLineAB{J}{S}
+    \pstLineAB{K}{R} \pstLineAB{K}{S} \pstLineAB{L}{R}
+    \pstLineAB{L}{S}
+\endpspicture
+\end{center}
+\end{multicols}
+
+\begin{enumerate}[(a)]
+    \item Tracer un segment $[RS]$ tel que $RS=6$.
+    \item Tracer le cercle $\mathcal{C}$ de centre $S$ et de rayon 6.
+    \item Tracer le cercle $\mathcal{C}_1$ de centre $R$ et de rayon 1.\\
+    Placer les points $A$ et $B$ qui sont les points d'intersection de $\mathcal{C}_1$ avec $\mathcal{C}$.
+    \item Tracer le cercle $\mathcal{C}_2$ de centre $R$ et de rayon 3.\\
+    Placer les points $C$ et $D$ qui sont les points d'intersection de $\mathcal{C}_2$ avec $\mathcal{C}$.
+    \item Tracer le cercle $\mathcal{C}_3$ de centre $R$ et de rayon 5.\\
+    Placer les points $E$ et $F$ qui sont les points d'intersection de $\mathcal{C}_3$ avec $\mathcal{C}$.
+    \item Tracer le cercle $\mathcal{C}_4$ de centre $R$ et de rayon 7.\\
+    Placer les points $G$ et $H$ qui sont les points d'intersection de $\mathcal{C}_4$ avec $\mathcal{C}$.
+    \item Tracer le cercle $\mathcal{C}_5$ de centre $R$ et de rayon 9.\\
+    Placer les points $I$ et $J$ qui sont les points d'intersection de $\mathcal{C}_5$ avec $\mathcal{C}$.
+    \item Tracer le cercle $\mathcal{C}_6$ de centre $R$ et de rayon 11.\\
+    Placer les points $K$ et $L$ qui sont les points d'intersection de $\mathcal{C}_6$ avec $\mathcal{C}$.
+    \item Tracer en rouge tous les triangles ayant pour sommets $R$, $S$ et l'un des points construits précédemment.
+    Coder en vert les longueurs égales sur cette figure.
+\end{enumerate}
+
+\vskip 0.2cm
+
+Que peut-on dire de la droite $(RS)$ pour cette figure géométrique
+? On ne demande pas de justification.

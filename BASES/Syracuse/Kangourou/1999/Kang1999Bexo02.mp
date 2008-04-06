@@ -1,0 +1,23 @@
+input geometriesyr16;
+figure(0,0,7.5u,4u);
+x.u=5mm;
+y.u=5mm;
+pair M,E;
+M=pp(2,7);
+E=pp(12,2);
+drawarrow M--pp(2,6);
+drawarrow pp(2,6)--pp(4,6);
+drawarrow pp(4,6)--pp(4,4);
+drawarrow pp(4,4)--pp(6,4);
+drawarrow pp(6,4)--pp(6,3);
+drawarrow pp(6,3)--pp(9,3);
+drawarrow pp(9,3)--pp(9,2);
+drawarrow pp(9,2)--E;
+drawarrow M--pp(12,7);
+drawarrow pp(12,7)--E;
+label.ulft(btex Maison etex,M);
+label.lrt(btex \'Ecole etex,E);
+trace appelation(M,pp(12,7),2mm,btex Chemin de Suzanne etex);
+label.llft(btex Chemin de Maggy etex,pp(6,3));
+fin;
+end
